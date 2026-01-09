@@ -52,9 +52,332 @@
                 document.addEventListener('DOMContentLoaded', t_setvisRecs);
             }
         })();</script>
-</head>
+    <style>
+        /* Стили для модального окна PDF - Glassmorphism */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* For Safari */
+            animation: fadeIn 0.4s ease-out;
+        }
 
-<body class="t-body" style="margin:0;"> <!--allrecords-->
+        .pdf-modal-content {
+            background: rgba(0, 0, 0, 0.05); /* Frosted glass effect */
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            margin: 5% auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.5s ease-out;
+            font-family: 'Montserrat', sans-serif; /* Explicitly set font */
+        }
+
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .close-modal {
+            /* Remove absolute positioning */
+            position: static; 
+            font-size: 30px;
+            font-weight: normal;
+            color: #ffffff;
+            opacity: 0.7;
+            cursor: pointer;
+            transition: all 0.3s;
+            /* Make it a flex item */
+            flex-shrink: 0; 
+        }
+
+        .close-modal:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal-title {
+            color: #ffffff;
+            font-size: 24px; /* Adjusted size */
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 0; /* Remove old margin */
+            flex-grow: 1; /* Allow title to take available space */
+            text-align: left; /* Align to the left within its space */
+            padding-right: 15px; /* Space between title and close button */
+        }
+
+        .pdf-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pdf-item {
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            transition: background 0.3s ease, border 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .pdf-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .pdf-link {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-icon {
+            position: relative;
+            width: 40px;
+            height: 50px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            background-color: #f8f9fa; /* Light gray for the document */
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: block;
+            color: transparent;
+        }
+
+        .pdf-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 10px 10px 0;
+            border-style: solid;
+            border-color: #adb5bd transparent; /* Fold color */
+            border-radius: 0 4px 0 0;
+        }
+
+        .pdf-icon::after {
+            content: 'PDF';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #d62828; /* A strong red */
+        }
+
+        .pdf-info {
+            flex-grow: 1;
+        }
+
+        .pdf-name {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .pdf-size {
+            font-size: 14px;
+            color: #eeeeee;
+            opacity: 0.8;
+        }
+
+        .download-btn {
+            padding: 8px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: #ffffff;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Custom scrollbar for the modal content */
+        .pdf-modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .pdf-modal-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .pdf-modal-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        .pdf-modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .pdf-modal-content {
+                width: 90%; /* A bit more space on the sides */
+                margin: 5% auto; /* Smaller top/bottom margin */
+                padding: 15px; /* Tighter padding */
+            }
+            
+            .pdf-link {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .pdf-icon {
+                margin: 0 auto 15px auto; /* Center the icon and give it bottom margin */
+            }
+
+            .pdf-info {
+                margin-bottom: 15px; /* Space between text and button */
+            }
+            
+            .modal-title {
+                font-size: 22px; /* A bit smaller */
+            }
+            
+            .pdf-name {
+                font-size: 16px;
+            }
+
+            .pdf-size {
+                font-size: 12px;
+            }
+
+            .download-btn {
+                width: 80%; /* Make button a bit wider but not full width */
+                margin: 0 auto; /* Center the button */
+                padding: 10px 0; /* Adjust padding */
+            }
+            
+            .close-modal {
+                font-size: 30px; /* Smaller size for mobile */
+                right: 15px;    /* Less offset from the right */
+                top: 10px;      /* Less offset from the top */
+            }
+        }
+    </style>
+        <style>
+            #documents-btn a {
+                background: linear-gradient(90deg, #12fff7, #b3ffab, #12fff7);
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                animation: shimmer 3s linear infinite;
+            }
+
+            @keyframes shimmer {
+                0% {
+                    background-position: 200% center;
+                }
+                100% {
+                    background-position: -200% center;
+                }
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="t-body" style="margin:0; font-family: 'Montserrat', sans-serif;">
+    <!-- Модальное окно для PDF -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Regulations and invitations</h2>
+            <span class="close-modal">&times;</span>
+        </div>
+            <ul class="pdf-list">
+                <li class="pdf-item">
+                    <a href="documents/Future Lab_2026_invitation.pdf" target="_blank" class="pdf-link">
+                        <div class="pdf-icon"></div>
+                        <div class="pdf-info">
+                            <div class="pdf-name">Invitation Letter</div>
+                            <div class="pdf-size">Official invitation to Future Lab Drone Intensive 2026</div>
+                        </div>
+                        <div class="download-btn">Open</div>
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <a href="documents/Future Lab_2026_program.pdf" target="_blank" class="pdf-link">
+                        <div class="pdf-icon"></div>
+                        <div class="pdf-info">
+                            <div class="pdf-name">Event Program</div>
+                            <div class="pdf-size">Detailed schedule and activities for all 3 days</div>
+                        </div>
+                        <div class="download-btn">Open</div>
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <a href="documents/Future_Lab_2026_Regulations_for_intensive_on_programming_unmanned.pdf" target="_blank" class="pdf-link">
+                        <div class="pdf-icon"></div>
+                        <div class="pdf-info">
+                            <div class="pdf-name">Programming Intensive Regulations</div>
+                            <div class="pdf-size">Rules and requirements for autonomous systems competition</div>
+                        </div>
+                        <div class="download-btn">Open</div>
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <a href="documents/Future_Lab_Intensive_2026_Regulations_on_Holding_a_Drone_Racing.pdf" target="_blank" class="pdf-link">
+                        <div class="pdf-icon"></div>
+                        <div class="pdf-info">
+                            <div class="pdf-name">Drone Racing Regulations</div>
+                            <div class="pdf-size">Competition rules for FPV drone racing championship</div>
+                        </div>
+                        <div class="download-btn">Open</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--allrecords-->
     <div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node"
         data-tilda-project-id="19966796" data-tilda-page-id="107598436" data-tilda-page-alias="1"
         data-tilda-formskey="dbb8b5de457593a81987253a19966796" data-tilda-cookie="no" data-tilda-lazy="yes"
@@ -71,7 +394,7 @@
                             style="background-color:#fff;"></span> </button>
                     <script>function t_menuburger_init(recid) {
                             var rec = document.querySelector('#rec' + recid); if (!rec) return; var burger = rec.querySelector('.t-menuburger'); if (!burger) return; var isSecondStyle = burger.classList.contains('t-menuburger_second'); if (isSecondStyle && !window.isMobile && !('ontouchend' in document)) { burger.addEventListener('mouseenter', function () { if (burger.classList.contains('t-menuburger-opened')) return; burger.classList.remove('t-menuburger-unhovered'); burger.classList.add('t-menuburger-hovered'); }); burger.addEventListener('mouseleave', function () { if (burger.classList.contains('t-menuburger-opened')) return; burger.classList.remove('t-menuburger-hovered'); burger.classList.add('t-menuburger-unhovered'); setTimeout(function () { burger.classList.remove('t-menuburger-unhovered'); }, 300); }); }
-                            burger.addEventListener('click', function () { if (!burger.closest('.tmenu-mobile') && !burger.closest('.t450__burger_container') && !burger.closest('.t466__container') && !burger.closest('.t204__burger') && !burger.closest('.t199__js__menu-toggler')) { burger.classList.toggle('t-menuburger-opened'); burger.classList.remove('t-menuburger-unhovered'); } }); var menu = rec.querySelector('[data-menu="yes"]'); if (!menu) return; var menuLinks = menu.querySelectorAll('.t-menu__link-item'); var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link']; Array.prototype.forEach.call(menuLinks, function (link) { link.addEventListener('click', function () { var isSubmenuHook = submenuClassList.some(function (submenuClass) { return link.classList.contains(submenuClass); }); if (isSubmenuHook) return; burger.classList.remove('t-menuburger-opened'); }); }); menu.addEventListener('clickedAnchorInTooltipMenu', function () { burger.classList.remove('t-menuburger-opened'); });
+                            burger.addEventListener('click', function () { if (!burger.closest('.tmenu-mobile') && !burger.closest('.t450__burger_container') && !burger.closest('.t466__container') && !burger.closest('.t204__burger') && !burger.closest('.t199__js__menu-toggler')) { burger.classList.toggle('t-menuburger-opened'); burger.classList.remove('t-menuburger-unhovered'); } }); var menu = rec.querySelector('[data-menu="yes"]'); if (!menu) return; var menuLinks = menu.querySelectorAll('.t-menu__link-item'); var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link']; Array.prototype.forEach.call(menuLinks, function (link) { link.addEventListener('click', function () { var isSubmenuHook = submenuClassList.some(function (submenuClass) { return link.classList.contains(submenuClass); }); if (isSubmenuHook) return; burger.classList.remove('t-menuburger-opened'); }); }); menu.addEventListener('clickedAnchorInTooltipMenu', function () { burger.classList.remove('t-menuburger-opened'); }); 
                         }
                         t_onReady(function () { t_onFuncLoad('t_menuburger_init', function () { t_menuburger_init('1748655253'); }); });</script>
                     <style>
@@ -476,9 +799,13 @@
                                         href="#schedule" data-menu-submenu-hook="" data-menu-item-number="1">
                                         Schedule
                                     </a> </li>
-                                <li class="t228__list_item" style="padding:0 0 0 15px;"> <a class="t-menu__link-item"
+                                <li class="t228__list_item" style="padding:0 0 0 0px;"> <a class="t-menu__link-item"
                                         href="#contacts" data-menu-submenu-hook="" data-menu-item-number="2">
                                         Contacts
+                                    </a> </li>
+                                <li class="t228__list_item" id="documents-btn" style="padding:0 0 0 15px;"> <a class="t-menu__link-item"
+                                        href="#documents" data-menu-submenu-hook="" data-menu-item-number="3">
+                                        Regulations and invitations
                                     </a> </li>
                             </ul>
                         </nav>
@@ -602,7 +929,7 @@
                                 viewBox="0 0 38.417 18.592" style="enable-background:new 0 0 38.417 18.592;">
                                 <g>
                                     <path
-                                        d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z" />
+                                        d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.3724-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z" />
                                 </g>
                             </svg></div>
                     </div>
@@ -1256,21 +1583,62 @@ t-container_100 t1231__container_indent-20px " data-remainder="0" data-total-cou
         </div>
     </div>
     <script>
-function copyCoords(event) {
-    event.preventDefault();
-    var coordsText = '24.722605, 54.749133';
-    navigator.clipboard.writeText(coordsText).then(function() {
-        var el = document.getElementById('coords');
-        var originalText = el.innerText;
-        el.innerText = 'Copied!';
-        setTimeout(function(){
-            el.innerText = originalText;
-        }, 2000);
-    }, function(err) {
-        console.error('Could not copy text: ', err);
-    });
-}
-</script>
+        function copyCoords(event) {
+            event.preventDefault();
+            var coordsText = '24.722605, 54.749133';
+            navigator.clipboard.writeText(coordsText).then(function() {
+                var el = document.getElementById('coords');
+                var originalText = el.innerText;
+                el.innerText = 'Copied!';
+                setTimeout(function(){
+                    el.innerText = originalText;
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // Функции для управления модальным окном PDF
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем элементы
+            const modal = document.getElementById('pdfModal');
+            const btn = document.getElementById('documents-btn');
+            const closeBtn = document.querySelector('.close-modal');
+            
+            // Открытие модального окна
+            if (btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+                });
+            }
+            
+            // Закрытие модального окна
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку
+                });
+            }
+            
+            // Закрытие при клике вне модального окна
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Закрытие при нажатии Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
