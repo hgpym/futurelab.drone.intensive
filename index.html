@@ -569,34 +569,26 @@
                                             January 20–22, <br />ABU DHABI</h1>
                                         <div class="t181__descr t-descr t-descr_lg t-animate"
                                             data-animate-style="fadeinright" data-animate-group="yes" field="descr">
-                                            <div style="font-size: 30px;" data-customstyle="yes"><strong>Future Lab
+                                            <div style="font-size: 30px; color: white" data-customstyle="yes"><strong>Future Lab
                                                     Drone Intensive</strong></div>
                                         </div>
-                                        <div class="t181__button-wrapper" style="margin-top:30px;"> <a
-                                                class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
-                                                href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"
-                                                data-animate-style="fadeinright" data-animate-group="yes"
-                                                data-animate-order="1"><span class="t-btnflex__text">Register</span>
-                                                <style>
-                                                    #rec1748655263 .t-btnflex.t-btnflex_type_button {
-                                                        color: #333333;
-                                                        background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 1) 0%, rgba(179, 255, 171, 1) 100%);
-                                                        transform: translateZ(0);
-                                                        border-style: solid !important;
-                                                        border-color: #ffffff4d !important;
-                                                        --border-width: 1px;
-                                                        border-radius: 64px;
-                                                        box-shadow: 10px -10px 20px -2px rgba(18, 255, 247, 0.5) !important;
-                                                        white-space: normal;
-                                                        transition-duration: 0.2s;
-                                                        transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
-                                                        transition-timing-function: ease-in-out;
-                                                        position: relative;
-                                                        overflow: hidden;
-                                                        z-index: 1;
-                                                    }
-                                                </style>
-                                            </a> </div>
+                                        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
+                                            <div class="t181__button-wrapper">
+                                                <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
+                                                    href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"
+                                                    data-animate-style="fadeinright" data-animate-group="yes"
+                                                    data-animate-order="1"><span class="t-btnflex__text">Register</span>
+                                                </a>
+                                            </div>
+                                            <div class="t181__button-wrapper">
+                                                <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
+                                                    id="location-btn"
+                                                    href="https://maps.app.goo.gl/nfbu2CyUxUFDBsyf8"
+                                                    data-animate-style="fadeinright" data-animate-group="yes"
+                                                    data-animate-order="1"><span class="t-btnflex__text">Location</span>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -617,9 +609,28 @@
                 </div> <!-- arrow -->
             </div>
             <style>
-                #rec1748655263 .t181__descr {
-                    opacity: 1;
-                    color: #ffffff;
+                #rec1748655263 .t-btnflex.t-btnflex_type_button {
+                    color: #333333;
+                    background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 1) 0%, rgba(179, 255, 171, 1) 100%);
+                    transform: translateZ(0);
+                    border-style: solid !important;
+                    border-color: #ffffff4d;
+                    --border-width: 1px;
+                    border-radius: 64px;
+                    box-shadow: 10px -10px 20px -2px rgba(18, 255, 247, 0.5) !important;
+                    white-space: normal;
+                    transition-duration: 0.2s;
+                    transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
+                    transition-timing-function: ease-in-out;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+                }
+                #location-btn {
+                    color: whitesmoke !important;
+                    border-color: whitesmoke !important;
+                    background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 0) 0%, rgba(179, 255, 171, 0) 0%) !important;
+                    --border-width: 2px !important;
                 }
             </style>
         </div>
@@ -1064,7 +1075,7 @@ t-container_100 t1231__container_indent-20px " data-remainder="0" data-total-cou
                     <div class="t-col t-col_10 t-prefix_1">
                         <div class="t030__descr t-descr t-descr_md" field="descr"><strong>United Arab Emirates, Abu
                                 Dhabi,</strong><br /><strong>KEZAD Warehouses (KLP-4) Unit
-                                B14-04</strong><br /><br /><strong>Future Lab UMEX Exhibition
+                                B14-04</strong><br /><a href="#" id="coords" onclick="copyCoords(event)" style="text-decoration: underline; cursor: pointer;">24.722605, 54.749133</a><br /><strong>Future Lab UMEX Exhibition
                                 Stand</strong><br /><strong>07-037</strong></div>
                     </div>
                 </div>
@@ -1123,7 +1134,7 @@ t-container_100 t1231__container_indent-20px " data-remainder="0" data-total-cou
                             data-map-y="37.617499" data-map-zoom="16" data-map-title="Moscow" data-map-mode=""
                             style="width:100%; position: relative; height:385px;"> </div>
                         <script
-                            type="text/javascript">var arMapMarkers1748655343 = [{ title: "KEZAD Warehouses (KLP-4)", descr: "", lat: "24.722788", lng: "54.749821", color: "#872dff", url: null, isOpen: false, isHidden: false, offset: null, },]; t_onReady(function () { t_map_lazyload_add_map(); window.addEventListener('scroll', t_throttle(t_map_lazyload_add_map, 300)); function t_map_lazyload_add_map() { var windowHeight = window.innerHeight; var scrollDiffHeigth = 700; var rec = document.getElementById('rec' + 1748655343); if (!rec) return; var map = rec.querySelector('.t-map-lazyload'); if (!map) return; var blockTop = map.getBoundingClientRect().top + window.pageYOffset; if (window.pageYOffset > blockTop - windowHeight - scrollDiffHeigth) { if (map.getAttribute('data-maplazy-load') === 'false') { map.setAttribute('data-maplazy-load', 'true'); t_onFuncLoad('t_appendYandexMap', function () { t_appendYandexMap("1748655343", ""); }); } } } });</script>
+                            type="text/javascript">var arMapMarkers1748655343 = [{ title: "KEZAD Warehouses (KLP-4)", descr: "", lat: "24.722605", lng: "54.749133", color: "#872dff", url: null, isOpen: false, isHidden: false, offset: null, },]; t_onReady(function () { t_map_lazyload_add_map(); window.addEventListener('scroll', t_throttle(t_map_lazyload_add_map, 300)); function t_map_lazyload_add_map() { var windowHeight = window.innerHeight; var scrollDiffHeigth = 700; var rec = document.getElementById('rec' + 1748655343); if (!rec) return; var map = rec.querySelector('.t-map-lazyload'); if (!map) return; var blockTop = map.getBoundingClientRect().top + window.pageYOffset; if (window.pageYOffset > blockTop - windowHeight - scrollDiffHeigth) { if (map.getAttribute('data-maplazy-load') === 'false') { map.setAttribute('data-maplazy-load', 'true'); t_onFuncLoad('t_appendYandexMap', function () { t_appendYandexMap("1748655343", ""); }); } } } });</script>
                     </div>
                 </div>
             </div>
@@ -1244,6 +1255,22 @@ t-container_100 t1231__container_indent-20px " data-remainder="0" data-total-cou
                 </a> </div>
         </div>
     </div>
+    <script>
+function copyCoords(event) {
+    event.preventDefault();
+    var coordsText = '24.722605, 54.749133';
+    navigator.clipboard.writeText(coordsText).then(function() {
+        var el = document.getElementById('coords');
+        var originalText = el.innerText;
+        el.innerText = 'Copied!';
+        setTimeout(function(){
+            el.innerText = originalText;
+        }, 2000);
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+</script>
 </body>
 
 </html>
