@@ -62,14 +62,17 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* For Safari */
+            -webkit-backdrop-filter: blur(12px);
+            /* For Safari */
             animation: fadeIn 0.4s ease-out;
         }
 
         .pdf-modal-content {
-            background: rgba(0, 0, 0, 0.05); /* Frosted glass effect */
+            background: rgba(0, 0, 0, 0.05);
+            /* Frosted glass effect */
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
@@ -81,7 +84,8 @@
             overflow-y: auto;
             position: relative;
             animation: slideIn 0.5s ease-out;
-            font-family: 'Montserrat', sans-serif; /* Explicitly set font */
+            font-family: 'Montserrat', sans-serif;
+            /* Explicitly set font */
         }
 
 
@@ -89,12 +93,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px; /* Space below the header */
+            margin-bottom: 20px;
+            /* Space below the header */
         }
 
         .close-modal {
             /* Remove absolute positioning */
-            position: static; 
+            position: static;
             font-size: 30px;
             font-weight: normal;
             color: #ffffff;
@@ -102,7 +107,7 @@
             cursor: pointer;
             transition: all 0.3s;
             /* Make it a flex item */
-            flex-shrink: 0; 
+            flex-shrink: 0;
         }
 
         .close-modal:hover {
@@ -113,13 +118,18 @@
 
         .modal-title {
             color: #ffffff;
-            font-size: 24px; /* Adjusted size */
+            font-size: 24px;
+            /* Adjusted size */
             font-weight: 600;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 0; /* Remove old margin */
-            flex-grow: 1; /* Allow title to take available space */
-            text-align: left; /* Align to the left within its space */
-            padding-right: 15px; /* Space between title and close button */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 0;
+            /* Remove old margin */
+            flex-grow: 1;
+            /* Allow title to take available space */
+            text-align: left;
+            /* Align to the left within its space */
+            padding-right: 15px;
+            /* Space between title and close button */
         }
 
         .pdf-list {
@@ -158,9 +168,10 @@
             height: 50px;
             margin-right: 20px;
             flex-shrink: 0;
-            background-color: #f8f9fa; /* Light gray for the document */
+            background-color: #f8f9fa;
+            /* Light gray for the document */
             border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             display: block;
             color: transparent;
         }
@@ -172,7 +183,8 @@
             right: 0;
             border-width: 0 10px 10px 0;
             border-style: solid;
-            border-color: #adb5bd transparent; /* Fold color */
+            border-color: #adb5bd transparent;
+            /* Fold color */
             border-radius: 0 4px 0 0;
         }
 
@@ -185,7 +197,8 @@
             text-align: center;
             font-size: 11px;
             font-weight: 700;
-            color: #d62828; /* A strong red */
+            color: #d62828;
+            /* A strong red */
         }
 
         .pdf-info {
@@ -225,8 +238,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
@@ -234,23 +252,27 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         /* Custom scrollbar for the modal content */
         .pdf-modal-content::-webkit-scrollbar {
             width: 8px;
         }
+
         .pdf-modal-content::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .pdf-modal-content::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
         }
+
         .pdf-modal-content::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.5);
         }
@@ -258,29 +280,35 @@
         /* Адаптивность */
         @media (max-width: 768px) {
             .pdf-modal-content {
-                width: 90%; /* A bit more space on the sides */
-                margin: 5% auto; /* Smaller top/bottom margin */
-                padding: 15px; /* Tighter padding */
+                width: 90%;
+                /* A bit more space on the sides */
+                margin: 5% auto;
+                /* Smaller top/bottom margin */
+                padding: 15px;
+                /* Tighter padding */
             }
-            
+
             .pdf-link {
                 flex-direction: column;
                 text-align: center;
                 padding: 15px;
             }
-            
+
             .pdf-icon {
-                margin: 0 auto 15px auto; /* Center the icon and give it bottom margin */
+                margin: 0 auto 15px auto;
+                /* Center the icon and give it bottom margin */
             }
 
             .pdf-info {
-                margin-bottom: 15px; /* Space between text and button */
+                margin-bottom: 15px;
+                /* Space between text and button */
             }
-            
+
             .modal-title {
-                font-size: 22px; /* A bit smaller */
+                font-size: 22px;
+                /* A bit smaller */
             }
-            
+
             .pdf-name {
                 font-size: 16px;
             }
@@ -290,71 +318,90 @@
             }
 
             .download-btn {
-                width: 80%; /* Make button a bit wider but not full width */
-                margin: 0 auto; /* Center the button */
-                padding: 10px 0; /* Adjust padding */
+                width: 80%;
+                /* Make button a bit wider but not full width */
+                margin: 0 auto;
+                /* Center the button */
+                padding: 10px 0;
+                /* Adjust padding */
             }
-            
+
             .close-modal {
-                font-size: 30px; /* Smaller size for mobile */
-                right: 15px;    /* Less offset from the right */
-                top: 10px;      /* Less offset from the top */
+                font-size: 30px;
+                /* Smaller size for mobile */
+                right: 15px;
+                /* Less offset from the right */
+                top: 10px;
+                /* Less offset from the top */
             }
         }
     </style>
-        <style>
-            #documents-btn a {
-                background: linear-gradient(90deg, #12fff7, #b3ffab, #12fff7);
-                background-size: 200% auto;
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                animation: shimmer 3s linear infinite;
+    <style>
+        #documents-btn a {
+            background: linear-gradient(90deg, #12fff7, #b3ffab, #12fff7);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% center;
             }
 
-            @keyframes shimmer {
-                0% {
-                    background-position: 200% center;
-                }
-                100% {
-                    background-position: -200% center;
-                }
+            100% {
+                background-position: -200% center;
             }
-        </style>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="t-body" style="margin:0; font-family: 'Montserrat', sans-serif;">
     <!-- Модальное окно для PDF -->
     <div id="pdfModal" class="pdf-modal">
         <div class="pdf-modal-content">
-        <div class="modal-header">
-            <h2 class="modal-title">Regulations and invitations</h2>
-            <span class="close-modal">&times;</span>
-        </div>
+            <div class="modal-header">
+                <h2 class="modal-title">Regulations and invitations</h2>
+                <span class="close-modal">&times;</span>
+            </div>
             <ul class="pdf-list">
                 <li class="pdf-item">
-                    <a href="documents/Future Lab_2026_invitation.pdf" target="_blank" class="pdf-link">
+                    <a href="documents/School_students_announcement.pdf" target="_blank" class="pdf-link">
                         <div class="pdf-icon"></div>
                         <div class="pdf-info">
-                            <div class="pdf-name">Invitation Letter</div>
-                            <div class="pdf-size">Official invitation to Future Lab Drone Intensive 2026</div>
+                            <div class="pdf-name">School students announcement</div>
+                            <div class="pdf-size">January 20 - FPV Racing Schedule Future Lab Drone Intensive 2026</div>
                         </div>
                         <div class="download-btn">Open</div>
                     </a>
                 </li>
                 <li class="pdf-item">
-                    <a href="documents/Future Lab_2026_program.pdf" target="_blank" class="pdf-link">
+                    <a href="documents/University_students_announcement.pdf" target="_blank" class="pdf-link">
                         <div class="pdf-icon"></div>
                         <div class="pdf-info">
-                            <div class="pdf-name">Event Program</div>
-                            <div class="pdf-size">Detailed schedule and activities for all 3 days</div>
+                            <div class="pdf-name">University students announcement</div>
+                            <div class="pdf-size">January 20-21 - Drone Intensive Schedule Future Lab Drone Intensive 2026</div>
                         </div>
                         <div class="download-btn">Open</div>
                     </a>
                 </li>
                 <li class="pdf-item">
-                    <a href="documents/Future_Lab_2026_Regulations_for_intensive_on_programming_unmanned.pdf" target="_blank" class="pdf-link">
+                    <a href="documents/All_participants_announcement.pdf" target="_blank" class="pdf-link">
+                        <div class="pdf-icon"></div>
+                        <div class="pdf-info">
+                            <div class="pdf-name">All participants announcement</div>
+                            <div class="pdf-size">January 21 - FPV Racing Schedule Future Lab Drone Intensive 2026</div>
+                        </div>
+                        <div class="download-btn">Open</div>
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <a href="documents/Future_Lab_2026_Regulations_for_intensive_on_programming_unmanned.pdf"
+                        target="_blank" class="pdf-link">
                         <div class="pdf-icon"></div>
                         <div class="pdf-info">
                             <div class="pdf-name">Programming Intensive Regulations</div>
@@ -364,7 +411,8 @@
                     </a>
                 </li>
                 <li class="pdf-item">
-                    <a href="documents/Future_Lab_Intensive_2026_Regulations_on_Holding_a_Drone_Racing.pdf" target="_blank" class="pdf-link">
+                    <a href="documents/Future_Lab_Intensive_2026_Regulations_on_Holding_a_Drone_Racing.pdf"
+                        target="_blank" class="pdf-link">
                         <div class="pdf-icon"></div>
                         <div class="pdf-info">
                             <div class="pdf-name">Drone Racing Regulations</div>
@@ -376,7 +424,7 @@
             </ul>
         </div>
     </div>
-    
+
     <!--allrecords-->
     <div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node"
         data-tilda-project-id="19966796" data-tilda-page-id="107598436" data-tilda-page-alias="1"
@@ -394,7 +442,7 @@
                             style="background-color:#fff;"></span> </button>
                     <script>function t_menuburger_init(recid) {
                             var rec = document.querySelector('#rec' + recid); if (!rec) return; var burger = rec.querySelector('.t-menuburger'); if (!burger) return; var isSecondStyle = burger.classList.contains('t-menuburger_second'); if (isSecondStyle && !window.isMobile && !('ontouchend' in document)) { burger.addEventListener('mouseenter', function () { if (burger.classList.contains('t-menuburger-opened')) return; burger.classList.remove('t-menuburger-unhovered'); burger.classList.add('t-menuburger-hovered'); }); burger.addEventListener('mouseleave', function () { if (burger.classList.contains('t-menuburger-opened')) return; burger.classList.remove('t-menuburger-hovered'); burger.classList.add('t-menuburger-unhovered'); setTimeout(function () { burger.classList.remove('t-menuburger-unhovered'); }, 300); }); }
-                            burger.addEventListener('click', function () { if (!burger.closest('.tmenu-mobile') && !burger.closest('.t450__burger_container') && !burger.closest('.t466__container') && !burger.closest('.t204__burger') && !burger.closest('.t199__js__menu-toggler')) { burger.classList.toggle('t-menuburger-opened'); burger.classList.remove('t-menuburger-unhovered'); } }); var menu = rec.querySelector('[data-menu="yes"]'); if (!menu) return; var menuLinks = menu.querySelectorAll('.t-menu__link-item'); var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link']; Array.prototype.forEach.call(menuLinks, function (link) { link.addEventListener('click', function () { var isSubmenuHook = submenuClassList.some(function (submenuClass) { return link.classList.contains(submenuClass); }); if (isSubmenuHook) return; burger.classList.remove('t-menuburger-opened'); }); }); menu.addEventListener('clickedAnchorInTooltipMenu', function () { burger.classList.remove('t-menuburger-opened'); }); 
+                            burger.addEventListener('click', function () { if (!burger.closest('.tmenu-mobile') && !burger.closest('.t450__burger_container') && !burger.closest('.t466__container') && !burger.closest('.t204__burger') && !burger.closest('.t199__js__menu-toggler')) { burger.classList.toggle('t-menuburger-opened'); burger.classList.remove('t-menuburger-unhovered'); } }); var menu = rec.querySelector('[data-menu="yes"]'); if (!menu) return; var menuLinks = menu.querySelectorAll('.t-menu__link-item'); var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link']; Array.prototype.forEach.call(menuLinks, function (link) { link.addEventListener('click', function () { var isSubmenuHook = submenuClassList.some(function (submenuClass) { return link.classList.contains(submenuClass); }); if (isSubmenuHook) return; burger.classList.remove('t-menuburger-opened'); }); }); menu.addEventListener('clickedAnchorInTooltipMenu', function () { burger.classList.remove('t-menuburger-opened'); });
                         }
                         t_onReady(function () { t_onFuncLoad('t_menuburger_init', function () { t_menuburger_init('1748655253'); }); });</script>
                     <style>
@@ -803,8 +851,9 @@
                                         href="#contacts" data-menu-submenu-hook="" data-menu-item-number="2">
                                         Contacts
                                     </a> </li>
-                                <li class="t228__list_item" id="documents-btn" style="padding:0 0 0 15px;"> <a class="t-menu__link-item"
-                                        href="#documents" data-menu-submenu-hook="" data-menu-item-number="3">
+                                <li class="t228__list_item" id="documents-btn" style="padding:0 0 0 15px;"> <a
+                                        class="t-menu__link-item" href="#documents" data-menu-submenu-hook=""
+                                        data-menu-item-number="3">
                                         Regulations and invitations
                                     </a> </li>
                             </ul>
@@ -885,760 +934,806 @@
                 <div class="t-container">
                     <div class="t-col t-col_8">
                         <div style="max-width: 140px; margin-right: auto;">
-                            <img src="images/tild6432-3032-4434-a333-373036636361__fb_sight__05_09_2025.svg" style="width: 140px; height: 125px; display: block;" alt="FutureLab">
-                        <div class="t-cover__wrapper t-valign_top"
-                            style="height:90vh; position: relative;z-index: 1;">
-                            <div class="t181">
-                                <div data-hook-content="covercontent">
-                                    <div class="t181__wrapper">
-                                        <h1 class="t181__title t-title t-title_md t-animate"
-                                            data-animate-style="fadeinright" data-animate-group="yes" field="title">
-                                            January 20–22, <br />ABU DHABI</h1>
-                                        <div class="t181__descr t-descr t-descr_lg t-animate"
-                                            data-animate-style="fadeinright" data-animate-group="yes" field="descr">
-                                            <div style="font-size: 30px; color: white" data-customstyle="yes"><strong>Future Lab
-                                                    Drone Intensive</strong></div>
-                                        </div>
-                                        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
-                                            <div class="t181__button-wrapper">
-                                                <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
-                                                    href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"
-                                                    data-animate-style="fadeinright" data-animate-group="yes"
-                                                    data-animate-order="1"><span class="t-btnflex__text">Register</span>
-                                                </a>
+                            <img src="images/tild6432-3032-4434-a333-373036636361__fb_sight__05_09_2025.svg"
+                                style="width: 140px; height: 125px; display: block;" alt="FutureLab">
+                            <div class="t-cover__wrapper t-valign_top"
+                                style="height:90vh; position: relative;z-index: 1;">
+                                <div class="t181">
+                                    <div data-hook-content="covercontent">
+                                        <div class="t181__wrapper">
+                                            <h1 class="t181__title t-title t-title_md t-animate"
+                                                data-animate-style="fadeinright" data-animate-group="yes" field="title">
+                                                January 20–22, <br />ABU DHABI</h1>
+                                            <div class="t181__descr t-descr t-descr_lg t-animate"
+                                                data-animate-style="fadeinright" data-animate-group="yes" field="descr">
+                                                <div style="font-size: 30px; color: white" data-customstyle="yes">
+                                                    <strong>Future Lab
+                                                        Drone Intensive</strong>
+                                                </div>
                                             </div>
-                                            <div class="t181__button-wrapper">
-                                                <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
-                                                    id="location-btn"
-                                                    href="https://maps.app.goo.gl/nfbu2CyUxUFDBsyf8"
-                                                    data-animate-style="fadeinright" data-animate-group="yes"
-                                                    data-animate-order="1"><span class="t-btnflex__text">Location</span>
-                                                </a>
+                                            <div
+                                                style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
+                                                <div class="t181__button-wrapper">
+                                                    <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
+                                                        href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"
+                                                        data-animate-style="fadeinright" data-animate-group="yes"
+                                                        data-animate-order="1"><span
+                                                            class="t-btnflex__text">Register</span>
+                                                    </a>
+                                                </div>
+                                                <div class="t181__button-wrapper">
+                                                    <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md t-animate"
+                                                        id="location-btn"
+                                                        href="https://maps.app.goo.gl/nfbu2CyUxUFDBsyf8"
+                                                        data-animate-style="fadeinright" data-animate-group="yes"
+                                                        data-animate-order="1"><span
+                                                            class="t-btnflex__text">Location</span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div> <!-- arrow -->
-                <div class="t-cover__arrow">
-                    <div class="t-cover__arrow-wrapper t-cover__arrow-wrapper_animated">
-                        <div class="t-cover__arrow_mobile"><svg role="presentation" class="t-cover__arrow-svg"
-                                style="fill:#ffffff;" x="0px" y="0px" width="38.417px" height="18.592px"
-                                viewBox="0 0 38.417 18.592" style="enable-background:new 0 0 38.417 18.592;">
-                                <g>
-                                    <path
-                                        d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.3724-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z" />
-                                </g>
-                            </svg></div>
-                    </div>
-                </div> <!-- arrow -->
-            </div>
-            <style>
-                #rec1748655263 .t-btnflex.t-btnflex_type_button {
-                    color: #333333;
-                    background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 1) 0%, rgba(179, 255, 171, 1) 100%);
-                    transform: translateZ(0);
-                    border-style: solid !important;
-                    border-color: #ffffff4d;
-                    --border-width: 1px;
-                    border-radius: 64px;
-                    box-shadow: 10px -10px 20px -2px rgba(18, 255, 247, 0.5) !important;
-                    white-space: normal;
-                    transition-duration: 0.2s;
-                    transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
-                    transition-timing-function: ease-in-out;
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 1;
-                }
-                #location-btn {
-                    color: whitesmoke !important;
-                    border-color: whitesmoke !important;
-                    background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 0) 0%, rgba(179, 255, 171, 0) 0%) !important;
-                    --border-width: 2px !important;
-                }
-            </style>
-        </div>
-        <div id="rec1748655273" class="r t-rec t-rec_pt_45 t-rec_pb_0"
-            style="padding-top:45px;padding-bottom:0px;background-color:#000000; " data-record-type="472"
-            data-bg-color="#000000"> <!-- T472 -->
-            <div class="t472">
-                <div class="t-container t-align_left">
-                    <div class="t-col t-col_10 t-prefix_1">
-                        <div class="t472__title t-section__title t-title t-title_md t-animate"
-                            data-animate-style="fadeinright" data-animate-group="yes" field="title">About the Event
+                    </div> <!-- arrow -->
+                    <div class="t-cover__arrow">
+                        <div class="t-cover__arrow-wrapper t-cover__arrow-wrapper_animated">
+                            <div class="t-cover__arrow_mobile"><svg role="presentation" class="t-cover__arrow-svg"
+                                    style="fill:#ffffff;" x="0px" y="0px" width="38.417px" height="18.592px"
+                                    viewBox="0 0 38.417 18.592" style="enable-background:new 0 0 38.417 18.592;">
+                                    <g>
+                                        <path
+                                            d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.3724-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z" />
+                                    </g>
+                                </svg></div>
                         </div>
-                        <div class="t472__descr t-section__descr t-descr t-descr_xxl t-animate"
-                            data-animate-style="fadeinright" data-animate-group="yes" field="descr">Three-day immersive
-                            experience in drone technology, autonomous systems, and FPV racing</div>
-                    </div>
-                    <div class="t-row t-clear"> </div>
-                </div>
-            </div>
-            <style>
-                #rec1748655273 .t472__title {
-                    background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
-                    color: transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                }
-
-                #rec1748655273 .t472__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
-                #rec1748655273 .t472__title>.ql-formula {
-                    color: #000;
-                }
-
-                #rec1748655273 .t472__descr {
-                    color: #e5ecff;
-                }
-            </style>
-        </div>
-        <div id="rec1748655283" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; "
-            data-animationappear="off" data-record-type="1231">
-            <div class="t1231">
-                <div class="
-t1231__container
-t-container_100 t1231__container_indent-20px " data-remainder="0" data-total-count="3">
-                    <div class="t1231__tile" itemscope itemtype="http://schema.org/ImageObject" style="
---desktop-grid-column: 1 / span 4;--desktop-grid-row: 1 / span 2;--mobile-grid-column: 1 / span 2;--mobile-grid-row: 1 / span 2;
-">
-                        <meta itemprop="image"
-                            content="images/tild3462-3735-4131-a566-303366393533__5373314064135688046.jpg">
-                        <div class="t1231__bgimg t-bgimg"
-                            data-original="images/tild3462-3735-4131-a566-303366393533__5373314064135688046.jpg"
-                            bgimgfield="gi_img__0" data-zoomable="yes" data-zoom-target="0"
-                            data-img-zoom-url="images/tild3462-3735-4131-a566-303366393533__5373314064135688046.jpg"
-                            style="background: url('images/tild3462-3735-4131-a566-303366393533__-__resizeb__20x__5373314064135688046.jpg') center/cover no-repeat;">
-                        </div>
-                    </div>
-                    <div class="t1231__tile" itemscope itemtype="http://schema.org/ImageObject" style="
---desktop-grid-column: 5 / span 2;--desktop-grid-row: 1 / span 1;--mobile-grid-column: 1 / span 1;--mobile-grid-row: 3 / span 1;
-">
-                        <meta itemprop="image"
-                            content="images/tild3962-6338-4230-b930-633237333339__5373314064135688051.jpg">
-                        <div class="t1231__bgimg t-bgimg"
-                            data-original="images/tild3962-6338-4230-b930-633237333339__5373314064135688051.jpg"
-                            bgimgfield="gi_img__1" data-zoomable="yes" data-zoom-target="1"
-                            data-img-zoom-url="images/tild3962-6338-4230-b930-633237333339__5373314064135688051.jpg"
-                            style="background: url('images/tild3962-6338-4230-b930-633237333339__-__resizeb__20x__5373314064135688051.jpg') center/cover no-repeat;">
-                        </div>
-                    </div>
-                    <div class="t1231__tile" itemscope itemtype="http://schema.org/ImageObject" style="
---desktop-grid-column: 5 / span 2;--desktop-grid-row: 2 / span 1;--mobile-grid-column: 2 / span 1;--mobile-grid-row: 3 / span 1;
-">
-                        <meta itemprop="image"
-                            content="images/tild3964-3732-4633-a237-653533616162__5373314064135688060.jpg">
-                        <div class="t1231__bgimg t-bgimg"
-                            data-original="images/tild3964-3732-4633-a237-653533616162__5373314064135688060.jpg"
-                            bgimgfield="gi_img__2" data-zoomable="yes" data-zoom-target="2"
-                            data-img-zoom-url="images/tild3964-3732-4633-a237-653533616162__5373314064135688060.jpg"
-                            style="background: url('images/tild3964-3732-4633-a237-653533616162__-__resizeb__20x__5373314064135688060.jpg') center/cover no-repeat;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="rec1748655293" class="r t-rec" style=" " data-record-type="215"> <a name="schedule"
-                style="font-size:0;"></a> </div>
-        <div id="rec1748655303" class="r t-rec t-rec_pt_60 t-rec_pb_0"
-            style="padding-top:60px;padding-bottom:0px;background-image:linear-gradient(0turn,rgba(47,0,127,1) 0%,rgba(0,0,0,1) 100%); "
-            data-record-type="513" data-bg-color="linear-gradient(0turn,rgba(47,0,127,1) 0%,rgba(0,0,0,1) 100%)">
-            <!-- T513 -->
-            <div class="t513">
-                <div class="t-section__container t-container t-container_flex">
-                    <div class="t-col t-col_12 ">
-                        <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto t-animate"
-                            data-animate-style="fadeinright" data-animate-group="yes" field="btitle"> <strong
-                                style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);"><em>Three
-                                    Days</em></strong><br /><strong
-                                style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);"><em>Three
-                                    Tracks</em></strong> </div>
-                        <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto t-animate"
-                            data-animate-style="fadeinright" data-animate-group="yes" field="bdescr"> <br /><strong
-                                style="background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);"><em>Schedule</em></strong>
-                        </div>
-                    </div>
+                    </div> <!-- arrow -->
                 </div>
                 <style>
-                    .t-section__descr {
-                        max-width: 560px;
+                    #rec1748655263 .t-btnflex.t-btnflex_type_button {
+                        color: #333333;
+                        background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 1) 0%, rgba(179, 255, 171, 1) 100%);
+                        transform: translateZ(0);
+                        border-style: solid !important;
+                        border-color: #ffffff4d;
+                        --border-width: 1px;
+                        border-radius: 64px;
+                        box-shadow: 10px -10px 20px -2px rgba(18, 255, 247, 0.5) !important;
+                        white-space: normal;
+                        transition-duration: 0.2s;
+                        transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
+                        transition-timing-function: ease-in-out;
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
                     }
 
-                    #rec1748655303 .t-section__title {
-                        margin-bottom: 40px;
-                    }
-
-                    #rec1748655303 .t-section__descr {
-                        margin-bottom: 90px;
-                    }
-
-                    @media screen and (max-width:960px) {
-                        #rec1748655303 .t-section__title {
-                            margin-bottom: 20px;
-                        }
-
-                        #rec1748655303 .t-section__descr {
-                            margin-bottom: 75px;
-                        }
+                    #location-btn {
+                        color: whitesmoke !important;
+                        border-color: whitesmoke !important;
+                        background-image: linear-gradient(0.125turn, rgba(18, 255, 247, 0) 0%, rgba(179, 255, 171, 0) 0%) !important;
+                        --border-width: 2px !important;
                     }
                 </style>
+            </div>
+            <div id="rec1748655273" class="r t-rec t-rec_pt_45 t-rec_pb_0"
+                style="padding-top:45px;padding-bottom:0px;background-color:#000000; " data-record-type="472"
+                data-bg-color="#000000"> <!-- T472 -->
+                <div class="t472">
+                    <div class="t-container t-align_left">
+                        <div class="t-col t-col_10 t-prefix_1">
+                            <div class="t472__title t-section__title t-title t-title_md t-animate"
+                                data-animate-style="fadeinright" data-animate-group="yes" field="title">About the Event
+                            </div>
+                            <div class="t472__descr t-section__descr t-descr t-descr_xxl t-animate"
+                                data-animate-style="fadeinright" data-animate-group="yes" field="descr">Three-day
+                                immersive
+                                experience in drone technology, autonomous systems, and FPV racing</div>
+                        </div>
+                        <div class="t-row t-clear"> </div>
+                    </div>
+                </div>
                 <style>
-                    #rec1748655303 .t-section__title {
+                    #rec1748655273 .t472__title {
                         background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
                         color: transparent;
                         -webkit-background-clip: text;
                         background-clip: text;
                     }
 
-                    @media screen and (min-width:480px) {
+                    #rec1748655273 .t472__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
+                    #rec1748655273 .t472__title>.ql-formula {
+                        color: #000;
+                    }
+
+                    #rec1748655273 .t472__descr {
+                        color: #e5ecff;
+                    }
+                </style>
+            </div>
+            <div id="rec1748655283" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; "
+                data-animationappear="off" data-record-type="1231">
+                <div class="t1231">
+                    <div class="
+t1231__container
+t-container_100 t1231__container_indent-20px " data-remainder="0" data-total-count="3">
+                        <div class="t1231__tile" itemscope itemtype="http://schema.org/ImageObject" style="
+--desktop-grid-column: 1 / span 4;--desktop-grid-row: 1 / span 2;--mobile-grid-column: 1 / span 2;--mobile-grid-row: 1 / span 2;
+">
+                            <meta itemprop="image"
+                                content="images/tild3462-3735-4131-a566-303366393533__5373314064135688046.jpg">
+                            <div class="t1231__bgimg t-bgimg"
+                                data-original="images/tild3462-3735-4131-a566-303366393533__5373314064135688046.jpg"
+                                bgimgfield="gi_img__0" data-zoomable="yes" data-zoom-target="0"
+                                data-img-zoom-url="images/tild3462-3735-4131-a566-303366393533__5373314064135688046.jpg"
+                                style="background: url('images/tild3462-3735-4131-a566-303366393533__-__resizeb__20x__5373314064135688046.jpg') center/cover no-repeat;">
+                            </div>
+                        </div>
+                        <div class="t1231__tile" itemscope itemtype="http://schema.org/ImageObject" style="
+--desktop-grid-column: 5 / span 2;--desktop-grid-row: 1 / span 1;--mobile-grid-column: 1 / span 1;--mobile-grid-row: 3 / span 1;
+">
+                            <meta itemprop="image"
+                                content="images/tild3962-6338-4230-b930-633237333339__5373314064135688051.jpg">
+                            <div class="t1231__bgimg t-bgimg"
+                                data-original="images/tild3962-6338-4230-b930-633237333339__5373314064135688051.jpg"
+                                bgimgfield="gi_img__1" data-zoomable="yes" data-zoom-target="1"
+                                data-img-zoom-url="images/tild3962-6338-4230-b930-633237333339__5373314064135688051.jpg"
+                                style="background: url('images/tild3962-6338-4230-b930-633237333339__-__resizeb__20x__5373314064135688051.jpg') center/cover no-repeat;">
+                            </div>
+                        </div>
+                        <div class="t1231__tile" itemscope itemtype="http://schema.org/ImageObject" style="
+--desktop-grid-column: 5 / span 2;--desktop-grid-row: 2 / span 1;--mobile-grid-column: 2 / span 1;--mobile-grid-row: 3 / span 1;
+">
+                            <meta itemprop="image"
+                                content="images/tild3964-3732-4633-a237-653533616162__5373314064135688060.jpg">
+                            <div class="t1231__bgimg t-bgimg"
+                                data-original="images/tild3964-3732-4633-a237-653533616162__5373314064135688060.jpg"
+                                bgimgfield="gi_img__2" data-zoomable="yes" data-zoom-target="2"
+                                data-img-zoom-url="images/tild3964-3732-4633-a237-653533616162__5373314064135688060.jpg"
+                                style="background: url('images/tild3964-3732-4633-a237-653533616162__-__resizeb__20x__5373314064135688060.jpg') center/cover no-repeat;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rec1748655293" class="r t-rec" style=" " data-record-type="215"> <a name="schedule"
+                    style="font-size:0;"></a> </div>
+            <div id="rec1748655303" class="r t-rec t-rec_pt_60 t-rec_pb_0"
+                style="padding-top:60px;padding-bottom:0px;background-image:linear-gradient(0turn,rgba(47,0,127,1) 0%,rgba(0,0,0,1) 100%); "
+                data-record-type="513" data-bg-color="linear-gradient(0turn,rgba(47,0,127,1) 0%,rgba(0,0,0,1) 100%)">
+                <!-- T513 -->
+                <div class="t513">
+                    <div class="t-section__container t-container t-container_flex">
+                        <div class="t-col t-col_12 ">
+                            <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto t-animate"
+                                data-animate-style="fadeinright" data-animate-group="yes" field="btitle"> <strong
+                                    style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);"><em>Three
+                                        Days</em></strong><br /><strong
+                                    style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);"><em>Three
+                                        Tracks</em></strong> </div>
+                            <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto t-animate"
+                                data-animate-style="fadeinright" data-animate-group="yes" field="bdescr"> <br /><strong
+                                    style="background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);"><em>Schedule</em></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        .t-section__descr {
+                            max-width: 560px;
+                        }
+
                         #rec1748655303 .t-section__title {
+                            margin-bottom: 40px;
+                        }
+
+                        #rec1748655303 .t-section__descr {
+                            margin-bottom: 90px;
+                        }
+
+                        @media screen and (max-width:960px) {
+                            #rec1748655303 .t-section__title {
+                                margin-bottom: 20px;
+                            }
+
+                            #rec1748655303 .t-section__descr {
+                                margin-bottom: 75px;
+                            }
+                        }
+                    </style>
+                    <style>
+                        #rec1748655303 .t-section__title {
+                            background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
+                            color: transparent;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                        }
+
+                        @media screen and (min-width:480px) {
+                            #rec1748655303 .t-section__title {
+                                font-size: 30px;
+                            }
+                        }
+
+                        @media screen and (max-width:480px),
+                        (orientation:landscape) and (max-height:480px) {
+                            #rec1748655303 .t-section__title {
+                                font-size: 30px;
+                            }
+                        }
+
+                        #rec1748655303 .t-section__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
+                        #rec1748655303 .t-section__title>.ql-formula {
+                            color: #000;
+                        }
+
+                        #rec1748655303 .t-section__descr {
+                            color: #ffffff;
+                        }
+                    </style>
+                    <div class="t-container">
+                        <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate"
+                            data-animate-style="fadeinright" data-animate-chain="yes">
+                            <div class="t-divider t513__line" style=" height: 0px; "></div>
+                        </div>
+                        <div class="t513__row t-row t-clear t-animate" data-animate-style="fadeinright"
+                            data-animate-chain="yes">
+                            <div class="t513__leftcol t-col t-col_2 t-prefix_1">
+                                <div class="t513__time t-name t-name_md" field="li_time__1766999939176">Day One –
+                                    January 20
+                                </div>
+                            </div>
+                            <div class="t513__rightcol t-col t-col_7 t-prefix_1">
+                                <div class="t513__title t-heading t-heading_xs" field="li_title__1766999939176"><strong
+                                        style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Grand
+                                        opening &amp; First Flights</strong><br /><br />12:00–14:15 Opening
+                                    ceremony<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Participant
+                                                registration</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Opening
+                                                ceremony</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Future
+                                                Lab facility tour</span></li>
+                                    </ul><br />14:15–20:30 Track Split &amp; Practice<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">FPV
+                                                drone setup, safety briefing</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Schools:
+                                                Qualification runs on FPV track</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Universities:
+                                                Simulator training and algorithm preparation</span></li>
+                                    </ul><br />All Day Master classes<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Basketball"</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Fishing"</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Biathlon"</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate"
+                            data-animate-style="fadeinright" data-animate-chain="yes">
+                            <div class="t-divider t513__line" style=" height: 0px; "></div>
+                        </div>
+                        <div class="t513__row t-row t-clear t-animate" data-animate-style="fadeinright"
+                            data-animate-chain="yes">
+                            <div class="t513__leftcol t-col t-col_2 t-prefix_1">
+                                <div class="t513__time t-name t-name_md" field="li_time__1766999960388">Day Two –
+                                    January 21
+                                </div>
+                            </div>
+                            <div class="t513__rightcol t-col t-col_7 t-prefix_1">
+                                <div class="t513__title t-heading t-heading_xs" field="li_title__1766999960388"><strong
+                                        style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Corporate
+                                        Championship</strong><br /><br />13:00–20:00 FPV race<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Registration,
+                                                briefing, qualification, championship race</span></li>
+                                    </ul><br />14:00-17:00 Algorithm Testing<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Equipment
+                                                checks</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Сode
+                                                deployment</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Сalibration</span>
+                                        </li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Autonomous
+                                                test flights on Bumblebee drones</span></li>
+                                    </ul><br />All Day Master classes<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Basketball"</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Fishing"</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Biathlon"</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate"
+                            data-animate-style="fadeinright" data-animate-chain="yes">
+                            <div class="t-divider t513__line" style=" height: 0px; "></div>
+                        </div>
+                        <div class="t513__row t-row t-clear t-animate" data-animate-style="fadeinright"
+                            data-animate-chain="yes">
+                            <div class="t513__leftcol t-col t-col_2 t-prefix_1">
+                                <div class="t513__time t-name t-name_md" field="li_time__1766999982471">Day Three –
+                                    January
+                                    22</div>
+                            </div>
+                            <div class="t513__rightcol t-col t-col_7 t-prefix_1">
+                                <div class="t513__title t-heading t-heading_xs" field="li_title__1766999982471"><strong
+                                        style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Grand
+                                        Final: </strong><br /><strong
+                                        style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Autonomous
+                                        Power Line Operations</strong><br /><br />12:00–16:15 Closing
+                                    Ceremony<br /><span
+                                        style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
+                                        Expert jury results</span><br /><span
+                                        style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
+                                        Awards for all categories</span><br /><span
+                                        style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
+                                        Demonstration flights</span><br /><span
+                                        style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
+                                        UMEX exhibition final</span><br /><br />12:00–16:00 Master classes<br />
+                                    <ul>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Basketball"</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Fishing"</span></li>
+                                        <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
+                                                style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
+                                                Biathlon"</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate"
+                            data-animate-style="fadeinright" data-animate-chain="yes">
+                            <div class="t-divider t513__line" style=" height: 0px; "></div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #rec1748655303 .t513__time {
+                        background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
+
+                    @media screen and (min-width:900px) {
+                        #rec1748655303 .t513__time {
+                            font-size: 44px;
+                        }
+                    }
+
+                    @media screen and (min-width:480px) and (max-width:900px) {
+                        #rec1748655303 .t513__time {
+                            font-size: 44px;
+                        }
+                    }
+
+                    @media screen and (max-width:480px),
+                    (orientation:landscape) and (max-height:480px) {
+                        #rec1748655303 .t513__time {
+                            font-size: 44px;
+                        }
+                    }
+
+                    #rec1748655303 .t513__time :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
+                    #rec1748655303 .t513__time>.ql-formula {
+                        color: #000;
+                    }
+
+                    #rec1748655303 .t513__title {
+                        font-size: 18px;
+                        background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
+
+                    @media screen and (max-width:480px),
+                    (orientation:landscape) and (max-height:480px) {
+                        #rec1748655303 .t513__title {
+                            font-size: 16px;
+                        }
+                    }
+
+                    #rec1748655303 .t513__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
+                    #rec1748655303 .t513__title>.ql-formula {
+                        color: #000;
+                    }
+                </style>
+            </div>
+            <div id="rec1748655313" class="r t-rec t-rec_pt_75 t-rec_pb_75"
+                style="padding-top:75px;padding-bottom:75px; " data-record-type="3"> <!-- T107 -->
+                <div class="t107">
+                    <div class="t-align_center" itemscope itemtype="http://schema.org/ImageObject">
+                        <meta itemprop="image" content="images/tild3065-3762-4962-b763-623234613862__noroot.png"> <img
+                            class="t-img t-width t107__widthauto"
+                            src="images/tild3065-3762-4962-b763-623234613862__-__empty__noroot.png"
+                            data-original="images/tild3065-3762-4962-b763-623234613862__noroot.png" imgfield="img"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="rec1748655323" class="r t-rec t-rec_pt_150 t-rec_pb_150"
+                style="padding-top:150px;padding-bottom:150px;background-image:linear-gradient(0turn,rgba(50,32,103,1) 0%,rgba(0,0,0,1) 100%); "
+                data-record-type="588" data-bg-color="linear-gradient(0turn,rgba(50,32,103,1) 0%,rgba(0,0,0,1) 100%)">
+                <!-- T588 -->
+                <div class="t588">
+                    <div class="t-container">
+                        <div class="t-col t-col_8 t-prefix_2 t-align_center">
+                            <div class="t588__title t-heading t-heading_lg t-margin_auto t-animate"
+                                data-animate-style="fadeinright" data-animate-group="yes" data-animate-order="1"
+                                field="title"><span style="font-weight: 900;">Ready to Join?</span></div>
+                            <div class="t588__descr t-descr t-descr_xl t-margin_auto t-animate"
+                                data-animate-style="fadeinright" data-animate-group="yes" data-animate-order="2"
+                                data-animate-delay="0.3" field="descr">Register now for Future Lab Drone Intensive and
+                                be
+                                part of the future of drone technology!</div>
+                            <div class="t588__buttons">
+                                <div class="t588__buttons-wrapper t-margin_auto"> <a
+                                        class="t-btn t-btnflex t-btnflex_type_button t-btnflex_xl t-animate"
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"
+                                        data-animate-style="fadeinright" data-animate-group="yes"
+                                        data-animate-order="1"><span class="t-btnflex__text"> Register </span>
+                                        <style>
+                                            #rec1748655323 .t-btnflex.t-btnflex_type_button {
+                                                color: #ffffff;
+                                                background-image: linear-gradient(0.125turn, rgba(32, 228, 164, 1) 0%, rgba(44, 201, 204, 1) 100%);
+                                                transform: translateZ(0);
+                                                border-style: solid !important;
+                                                border-color: #ffffff4d !important;
+                                                --border-width: 1px;
+                                                border-radius: 64px;
+                                                box-shadow: 10px -10px 20px -2px rgba(32, 228, 164, 0.5) !important;
+                                                transition-duration: 0.2s;
+                                                transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
+                                                transition-timing-function: ease-in-out;
+                                                position: relative;
+                                                overflow: hidden;
+                                                z-index: 1;
+                                            }
+                                        </style>
+                                    </a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #rec1748655323 .t588__title {
+                        background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        font-weight: 700;
+                    }
+
+                    #rec1748655323 .t588__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
+                    #rec1748655323 .t588__title>.ql-formula {
+                        color: #000;
+                    }
+
+                    #rec1748655323 .t588__descr {
+                        max-width: 700px;
+                        background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        font-family: 'TildaSans';
+                        font-weight: 800;
+                    }
+
+                    #rec1748655323 .t588__descr :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
+                    #rec1748655323 .t588__descr>.ql-formula {
+                        color: #000;
+                    }
+                </style>
+            </div>
+            <div id="rec1748655333" class="r t-rec t-rec_pt_150 t-rec_pb_120"
+                style="padding-top:150px;padding-bottom:120px;background-image:linear-gradient(1turn,rgba(119,104,232,1) 0%,rgba(52,33,106,1) 100%); "
+                data-record-type="43"
+                data-bg-color="linear-gradient(1turn,rgba(119,104,232,1) 0%,rgba(52,33,106,1) 100%)">
+                <!-- T030 -->
+                <div class="t030">
+                    <div class="t-container t-align_center">
+                        <div class="t-col t-col_10 t-prefix_1">
+                            <div class="t030__descr t-descr t-descr_md" field="descr"><strong>United Arab Emirates, Abu
+                                    Dhabi,</strong><br /><strong>KEZAD Warehouses (KLP-4) Unit
+                                    B14-04</strong><br /><a href="#" id="coords" onclick="copyCoords(event)"
+                                    style="text-decoration: underline; cursor: pointer;">24.722605,
+                                    54.749133</a><br /><strong>Future Lab UMEX Exhibition
+                                    Stand</strong><br /><strong>07-037</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #rec1748655333 .t030__title {
+                        color: #ffffff;
+                    }
+
+                    @media screen and (min-width:480px) {
+                        #rec1748655333 .t030__title {
                             font-size: 30px;
                         }
                     }
 
                     @media screen and (max-width:480px),
                     (orientation:landscape) and (max-height:480px) {
-                        #rec1748655303 .t-section__title {
-                            font-size: 30px;
+                        #rec1748655333 .t030__title {
+                            font-size: 26px;
                         }
                     }
 
-                    #rec1748655303 .t-section__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
-                    #rec1748655303 .t-section__title>.ql-formula {
-                        color: #000;
+                    #rec1748655333 .t030__descr {
+                        color: #ffffff;
                     }
 
-                    #rec1748655303 .t-section__descr {
+                    @media screen and (min-width:900px) {
+                        #rec1748655333 .t030__descr {
+                            font-size: 34px;
+                        }
+                    }
+
+                    @media screen and (min-width:480px) and (max-width:900px) {
+                        #rec1748655333 .t030__descr {
+                            font-size: 28px;
+                        }
+                    }
+
+                    @media screen and (max-width:480px),
+                    (orientation:landscape) and (max-height:480px) {
+                        #rec1748655333 .t030__descr {
+                            font-size: 28px;
+                        }
+                    }
+                </style>
+            </div>
+            <div id="rec1748655343" class="r t-rec t-rec_pt_0 t-rec_pb_0"
+                style="padding-top:0px;padding-bottom:0px;background-image:linear-gradient(0turn,rgba(111,96,217,1) 0%,rgba(119,104,232,1) 100%); "
+                data-record-type="125"
+                data-bg-color="linear-gradient(0turn,rgba(111,96,217,1) 0%,rgba(119,104,232,1) 100%)"> <!-- T117 -->
+                <div class="t117">
+                    <div class="t-width t-margin_auto t-width_10">
+                        <div class="t-map-lazyload t117_map" data-maplazy-load="false"
+                            style="background-color:rgb(229, 227, 223);overflow:hidden;transform: translateZ(0)">
+                            <div class="t-map" id="separateMap1748655343" data-map-language="" data-map-x="55.751979"
+                                data-map-y="37.617499" data-map-zoom="16" data-map-title="Moscow" data-map-mode=""
+                                style="width:100%; position: relative; height:385px;"> </div>
+                            <script
+                                type="text/javascript">var arMapMarkers1748655343 = [{ title: "KEZAD Warehouses (KLP-4)", descr: "", lat: "24.722605", lng: "54.749133", color: "#872dff", url: null, isOpen: false, isHidden: false, offset: null, },]; t_onReady(function () { t_map_lazyload_add_map(); window.addEventListener('scroll', t_throttle(t_map_lazyload_add_map, 300)); function t_map_lazyload_add_map() { var windowHeight = window.innerHeight; var scrollDiffHeigth = 700; var rec = document.getElementById('rec' + 1748655343); if (!rec) return; var map = rec.querySelector('.t-map-lazyload'); if (!map) return; var blockTop = map.getBoundingClientRect().top + window.pageYOffset; if (window.pageYOffset > blockTop - windowHeight - scrollDiffHeigth) { if (map.getAttribute('data-maplazy-load') === 'false') { map.setAttribute('data-maplazy-load', 'true'); t_onFuncLoad('t_appendYandexMap', function () { t_appendYandexMap("1748655343", ""); }); } } } });</script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rec1748655353" class="r t-rec" style=" " data-record-type="215"> <a name="contacts"
+                    style="font-size:0;"></a> </div>
+            <div id="rec1748655363" class="r t-rec t-rec_pt_150 t-rec_pb_150"
+                style="padding-top:150px;padding-bottom:150px;background-color:#6f60d9; " data-record-type="551"
+                data-bg-color="#6f60d9"> <!-- t551-->
+                <div class="t551">
+                    <div class="t-container">
+                        <div class="t-col t-col_6 t-prefix_3 t-align_center">
+                            <div class="t551__title t-name t-name_xs" field="title" data-animate-order="1">Contacts
+                            </div>
+                            <div class="t551__contacts t-title t-title_xxs" field="text" data-animate-order="2"
+                                data-animate-delay="0.3">+971 50 904 9893</div>
+                            <div class="t551__address t-text t-text_sm" field="text2" data-animate-order="3"
+                                data-animate-delay="0.3">Website: futurelab-uae.com<br />Email:
+                                future.lab.ind.uae@gmail.com<br />Instagram:
+                                @futurelab.uae
+                            </div>
+                            <div class="t-sociallinks">
+                                <ul role="list" class="t-sociallinks__wrapper" aria-label="Social media links">
+                                    <!-- new soclinks -->
+                                    <li class="t-sociallinks__item t-sociallinks__item_website"><a
+                                            href="https://futurelab-uae.com" target="_blank" rel="nofollow"
+                                            aria-label="website" style="width: 30px; height: 30px;"><svg
+                                                class="t-sociallinks__svg" role="presentation" width=30px height=30px
+                                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM43.1192 25.9588C42.7309 26.4078 42.3383 26.8888 41.946 27.4032C39.4191 30.7167 36.9293 35.3813 35.6505 41.6978H26.4111C29.0843 34.1017 35.3234 28.1857 43.1192 25.9588ZM25 49.9979C25 48.2235 25.1849 46.4923 25.5364 44.8225H35.1389C34.8984 46.7237 34.7656 48.7559 34.7656 50.9255C34.7656 52.3779 34.8252 53.7602 34.9368 55.0756H25.5161C25.1777 53.436 25 51.7377 25 49.9979ZM42.3083 73.7903C34.8591 71.3843 28.9386 65.5776 26.3769 58.2003H35.3161C36.4534 65.3227 39.1925 70.1988 42.0073 73.4492C42.1077 73.565 42.208 73.6787 42.3083 73.7903ZM48.35 74.9422L48.4375 74.9477V58.2003H38.4839C39.5758 64.4887 42.0087 68.6774 44.3697 71.4036C45.8002 73.0554 47.2242 74.1932 48.35 74.9422ZM73.6231 58.2003C71.0614 65.5776 65.1409 71.3843 57.6917 73.7903C57.792 73.6787 57.8923 73.565 57.9927 73.4492C60.8075 70.1988 63.5466 65.3227 64.6839 58.2003H73.6231ZM75 49.9979C75 51.7377 74.8223 53.436 74.4839 55.0756H65.0632C65.1748 53.7602 65.2344 52.3779 65.2344 50.9255C65.2344 48.7559 65.1016 46.7237 64.8611 44.8225H74.4636C74.8151 46.4923 75 48.2235 75 49.9979ZM56.8808 25.9588C64.6766 28.1857 70.9157 34.1017 73.5889 41.6978H64.3495C63.0707 35.3813 60.5809 30.7167 58.054 27.4032C57.6617 26.8888 57.2691 26.4078 56.8808 25.9588ZM51.65 74.9422C52.7758 74.1932 54.1998 73.0554 55.6303 71.4036C57.9913 68.6774 60.4242 64.4887 61.5161 58.2003H51.5625V74.9477L51.65 74.9422ZM48.4375 55.0756H38.0738C37.9548 53.7708 37.8906 52.3889 37.8906 50.9255C37.8906 48.7369 38.0342 46.7056 38.2907 44.8225H48.4375V55.0756ZM61.9262 55.0756H51.5625V44.8225H61.7093C61.9658 46.7056 62.1094 48.7369 62.1094 50.9255C62.1094 52.3889 62.0452 53.7708 61.9262 55.0756ZM44.431 29.2979C45.8667 27.4153 47.2975 26.042 48.4375 25.1006V41.6978H38.8444C40.0593 36.1765 42.2624 32.1415 44.431 29.2979ZM61.1556 41.6978C59.9407 36.1765 57.7376 32.1415 55.569 29.2979C54.1333 27.4153 52.7026 26.042 51.5625 25.1006V41.6978H61.1556Z"
+                                                    fill="#ffffff" />
+                                            </svg></a></li>&nbsp;<li
+                                        class="t-sociallinks__item t-sociallinks__item_instagram">
+                                        <a href="https://www.instagram.com/futurelab.uae?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="nofollow"
+                                            aria-label="instagram" style="width: 30px; height: 30px;">
+                                            <svg class="t-sociallinks__svg" role="presentation" width="30px"
+                                                height="30px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+                                                <!-- залитый круг -->
+                                                <circle cx="50" cy="50" r="50" fill="#ffffff" />
+
+                                                <!-- рамка камеры -->
+                                                <rect x="26" y="26" width="48" height="48" rx="14" fill="none"
+                                                    stroke="#6f60d9" stroke-width="6" />
+
+                                                <!-- объектив -->
+                                                <circle cx="50" cy="50" r="14" fill="none" stroke="#6f60d9"
+                                                    stroke-width="6" />
+                                                <!-- точка -->
+                                                <circle cx="65" cy="35" r="3.5" fill="#6f60d9" />
+
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="t-sociallinks__item t-sociallinks__item_email">
+                                        <a href="mailto:future.lab.ind.uae@gmail.com" target="_blank" rel="nofollow"
+                                            aria-label="Электронная почта" style="width: 30px; height: 30px;"><svg
+                                                class="t-sociallinks__svg" role="presentation" width=30px height=30px
+                                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM51.8276 49.2076L74.191 33.6901C73.4347 32.6649 72.2183 32 70.8466 32H29.1534C27.8336 32 26.6576 32.6156 25.8968 33.5752L47.5881 49.172C48.8512 50.0802 50.5494 50.0945 51.8276 49.2076ZM75 63.6709V37.6286L53.4668 52.57C51.1883 54.151 48.1611 54.1256 45.9095 52.5066L25 37.4719V63.6709C25 65.9648 26.8595 67.8243 29.1534 67.8243H70.8466C73.1405 67.8243 75 65.9648 75 63.6709Z"
+                                                    fill="#ffffff" />
+                                            </svg></a>
+                                    </li>&nbsp;<li class="t-sociallinks__item t-sociallinks__item_phone">
+                                        <a href="tel:+971 50 904 9893" target="_self" rel="nofollow"
+                                            aria-label="Телефон" style="width: 30px; height: 30px;"><svg
+                                                class="t-sociallinks__svg" role="presentation" width=30px height=30px
+                                                viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM50.0089 29H51.618C56.4915 29.0061 61.1633 30.9461 64.6073 34.3938C68.0512 37.8415 69.9856 42.5151 69.9856 47.3879V48.9968C69.9338 49.5699 69.6689 50.1027 69.2433 50.49C68.8177 50.8772 68.2623 51.0908 67.6868 51.0884H67.5029C66.8966 51.0358 66.3359 50.745 65.9437 50.2796C65.5516 49.8143 65.36 49.2124 65.4109 48.6061V47.3879C65.4109 43.7303 63.9578 40.2225 61.3711 37.6362C58.7844 35.0499 55.2761 33.597 51.618 33.597H50.3997C49.79 33.6488 49.1847 33.4563 48.7169 33.0619C48.2492 32.6675 47.9573 32.1035 47.9054 31.4939C47.8536 30.8843 48.0461 30.279 48.4406 29.8114C48.835 29.3437 49.3992 29.0518 50.0089 29ZM56.889 49.0132C56.4579 48.5821 56.2157 47.9975 56.2157 47.3879C56.2157 46.1687 55.7313 44.9994 54.869 44.1373C54.0068 43.2752 52.8374 42.7909 51.618 42.7909C51.0083 42.7909 50.4236 42.5488 49.9925 42.1177C49.5614 41.6867 49.3192 41.102 49.3192 40.4924C49.3192 39.8828 49.5614 39.2982 49.9925 38.8672C50.4236 38.4361 51.0083 38.1939 51.618 38.1939C54.0568 38.1939 56.3956 39.1626 58.1201 40.8868C59.8445 42.611 60.8133 44.9495 60.8133 47.3879C60.8133 47.9975 60.5711 48.5821 60.14 49.0132C59.7089 49.4442 59.1242 49.6864 58.5145 49.6864C57.9048 49.6864 57.3201 49.4442 56.889 49.0132ZM66.4011 69.0663L66.401 69.0846C66.3999 69.5725 66.2967 70.0547 66.0981 70.5003C65.8998 70.9451 65.611 71.3435 65.2499 71.67C64.8674 72.0182 64.4123 72.2771 63.9176 72.428C63.4516 72.5702 62.9613 72.6132 62.4782 72.5546C58.2475 72.53 53.4102 70.5344 49.1802 68.1761C44.8871 65.7827 41.0444 62.915 38.8019 60.9903L38.7681 60.9613L38.7367 60.9299C32.3303 54.5198 28.2175 46.1735 27.0362 37.186C26.9623 36.6765 27.0018 36.157 27.1519 35.6645C27.3027 35.1695 27.5615 34.7142 27.9094 34.3314C28.2397 33.9658 28.6436 33.6742 29.0944 33.4757C29.5447 33.2775 30.0316 33.1766 30.5234 33.1796H37.4967C38.299 33.1636 39.0826 33.4244 39.7156 33.9184C40.3527 34.4156 40.7979 35.1184 40.9754 35.9071L41.0038 36.0335V36.1631C41.0038 36.4901 41.0787 36.795 41.1847 37.2268C41.2275 37.4012 41.2755 37.5965 41.3256 37.8221L41.326 37.8238C41.583 38.9896 41.925 40.1351 42.3491 41.251L42.7322 42.259L38.4899 44.26L38.4846 44.2625C38.204 44.3914 37.986 44.6263 37.8784 44.9157L37.8716 44.934L37.8642 44.952C37.7476 45.236 37.7476 45.5545 37.8642 45.8385L37.9144 45.9608L37.9359 46.0912C38.0802 46.9648 38.5603 48.0981 39.4062 49.4169C40.243 50.7215 41.3964 52.1437 42.808 53.5872C45.6206 56.4634 49.3981 59.3625 53.5798 61.5387C53.8533 61.6395 54.1552 61.6343 54.4257 61.5231L54.4437 61.5157L54.462 61.5089C54.7501 61.4016 54.9842 61.1848 55.1133 60.9057L55.1148 60.9023L57.0232 56.6591L58.0397 57.03C59.1934 57.4509 60.3737 57.7947 61.5729 58.0592L61.5785 58.0605L61.5841 58.0618C62.152 58.1929 62.7727 58.3042 63.3802 58.3942L63.4231 58.4006L63.4654 58.4101C64.2537 58.5877 64.956 59.0332 65.453 59.6706C65.9429 60.2991 66.2033 61.0758 66.1916 61.8721L66.4011 69.0663Z"
+                                                    fill="#ffffff" />
+                                            </svg></a>
+                                    </li><!-- /new soclinks -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #rec1748655363 .t551__title {
+                        font-size: 22px;
+                        color: #ffffff;
+                    }
+
+                    @media screen and (max-width:480px),
+                    (orientation:landscape) and (max-height:480px) {
+                        #rec1748655363 .t551__title {
+                            font-size: 20px;
+                        }
+                    }
+
+                    #rec1748655363 .t551__contacts {
+                        color: #ffffff;
+                    }
+
+                    #rec1748655363 .t551__address {
                         color: #ffffff;
                     }
                 </style>
-                <div class="t-container">
-                    <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t-divider t513__line" style=" height: 0px; "></div>
-                    </div>
-                    <div class="t513__row t-row t-clear t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t513__leftcol t-col t-col_2 t-prefix_1">
-                            <div class="t513__time t-name t-name_md" field="li_time__1766999939176">Day One – January 20
-                            </div>
-                        </div>
-                        <div class="t513__rightcol t-col t-col_7 t-prefix_1">
-                            <div class="t513__title t-heading t-heading_xs" field="li_title__1766999939176"><strong
-                                    style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Grand
-                                    opening &amp; First Flights</strong><br /><br />12:00–14:15 Opening ceremony<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Participant
-                                            registration</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Opening
-                                            ceremony</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Future
-                                            Lab facility tour</span></li>
-                                </ul><br />14:15–20:30 Track Split &amp; Practice<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">FPV
-                                            drone setup, safety briefing</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Schools:
-                                            Qualification runs on FPV track</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Universities:
-                                            Simulator training and algorithm preparation</span></li>
-                                </ul><br />All Day Master classes<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Basketball"</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Fishing"</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Biathlon"</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t-divider t513__line" style=" height: 0px; "></div>
-                    </div>
-                    <div class="t513__row t-row t-clear t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t513__leftcol t-col t-col_2 t-prefix_1">
-                            <div class="t513__time t-name t-name_md" field="li_time__1766999960388">Day Two – January 21
-                            </div>
-                        </div>
-                        <div class="t513__rightcol t-col t-col_7 t-prefix_1">
-                            <div class="t513__title t-heading t-heading_xs" field="li_title__1766999960388"><strong
-                                    style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Corporate
-                                    Championship</strong><br /><br />13:00–20:00 FPV race<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Registration,
-                                            briefing, qualification, championship race</span></li>
-                                </ul><br />14:00-17:00 Algorithm Testing<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Equipment
-                                            checks</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Сode
-                                            deployment</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Сalibration</span>
-                                    </li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">Autonomous
-                                            test flights on Bumblebee drones</span></li>
-                                </ul><br />All Day Master classes<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Basketball"</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Fishing"</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Biathlon"</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t-divider t513__line" style=" height: 0px; "></div>
-                    </div>
-                    <div class="t513__row t-row t-clear t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t513__leftcol t-col t-col_2 t-prefix_1">
-                            <div class="t513__time t-name t-name_md" field="li_time__1766999982471">Day Three – January
-                                22</div>
-                        </div>
-                        <div class="t513__rightcol t-col t-col_7 t-prefix_1">
-                            <div class="t513__title t-heading t-heading_xs" field="li_title__1766999982471"><strong
-                                    style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Grand
-                                    Final: </strong><br /><strong
-                                    style="font-weight: 900; background-image: linear-gradient(0.125turn, rgb(118, 254, 197) 0%, rgb(228, 255, 249) 100%); background-clip: text; color: transparent; caret-color: rgb(118, 254, 197);">Autonomous
-                                    Power Line Operations</strong><br /><br />12:00–16:15 Closing Ceremony<br /><span
-                                    style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
-                                    Expert jury results</span><br /><span
-                                    style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
-                                    Awards for all categories</span><br /><span
-                                    style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
-                                    Demonstration flights</span><br /><span
-                                    style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">•
-                                    UMEX exhibition final</span><br /><br />12:00–16:00 Master classes<br />
-                                <ul>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Basketball"</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Fishing"</span></li>
-                                    <li data-list="bullet" style="color: rgb(204, 204, 204);"><span
-                                            style="background-image: linear-gradient(0turn, rgb(204, 204, 204) 0%, rgb(119, 119, 119) 100%); background-clip: text; color: transparent; caret-color: rgb(204, 204, 204);">"Drone
-                                            Biathlon"</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t513__linewrapper t-col t-col_10 t-prefix_1 t-animate" data-animate-style="fadeinright"
-                        data-animate-chain="yes">
-                        <div class="t-divider t513__line" style=" height: 0px; "></div>
-                    </div>
-                </div>
             </div>
-            <style>
-                #rec1748655303 .t513__time {
-                    background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
-                    color: transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                }
-
-                @media screen and (min-width:900px) {
-                    #rec1748655303 .t513__time {
-                        font-size: 44px;
-                    }
-                }
-
-                @media screen and (min-width:480px) and (max-width:900px) {
-                    #rec1748655303 .t513__time {
-                        font-size: 44px;
-                    }
-                }
-
-                @media screen and (max-width:480px),
-                (orientation:landscape) and (max-height:480px) {
-                    #rec1748655303 .t513__time {
-                        font-size: 44px;
-                    }
-                }
-
-                #rec1748655303 .t513__time :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
-                #rec1748655303 .t513__time>.ql-formula {
-                    color: #000;
-                }
-
-                #rec1748655303 .t513__title {
-                    font-size: 18px;
-                    background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
-                    color: transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                }
-
-                @media screen and (max-width:480px),
-                (orientation:landscape) and (max-height:480px) {
-                    #rec1748655303 .t513__title {
-                        font-size: 16px;
-                    }
-                }
-
-                #rec1748655303 .t513__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
-                #rec1748655303 .t513__title>.ql-formula {
-                    color: #000;
-                }
-            </style>
-        </div>
-        <div id="rec1748655313" class="r t-rec t-rec_pt_75 t-rec_pb_75" style="padding-top:75px;padding-bottom:75px; "
-            data-record-type="3"> <!-- T107 -->
-            <div class="t107">
-                <div class="t-align_center" itemscope itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="image" content="images/tild3065-3762-4962-b763-623234613862__noroot.png"> <img
-                        class="t-img t-width t107__widthauto"
-                        src="images/tild3065-3762-4962-b763-623234613862__-__empty__noroot.png"
-                        data-original="images/tild3065-3762-4962-b763-623234613862__noroot.png" imgfield="img" alt="">
-                </div>
-            </div>
-        </div>
-        <div id="rec1748655323" class="r t-rec t-rec_pt_150 t-rec_pb_150"
-            style="padding-top:150px;padding-bottom:150px;background-image:linear-gradient(0turn,rgba(50,32,103,1) 0%,rgba(0,0,0,1) 100%); "
-            data-record-type="588" data-bg-color="linear-gradient(0turn,rgba(50,32,103,1) 0%,rgba(0,0,0,1) 100%)">
-            <!-- T588 -->
-            <div class="t588">
-                <div class="t-container">
-                    <div class="t-col t-col_8 t-prefix_2 t-align_center">
-                        <div class="t588__title t-heading t-heading_lg t-margin_auto t-animate"
-                            data-animate-style="fadeinright" data-animate-group="yes" data-animate-order="1"
-                            field="title"><span style="font-weight: 900;">Ready to Join?</span></div>
-                        <div class="t588__descr t-descr t-descr_xl t-margin_auto t-animate"
-                            data-animate-style="fadeinright" data-animate-group="yes" data-animate-order="2"
-                            data-animate-delay="0.3" field="descr">Register now for Future Lab Drone Intensive and be
-                            part of the future of drone technology!</div>
-                        <div class="t588__buttons">
-                            <div class="t588__buttons-wrapper t-margin_auto"> <a
-                                    class="t-btn t-btnflex t-btnflex_type_button t-btnflex_xl t-animate"
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"
-                                    data-animate-style="fadeinright" data-animate-group="yes"
-                                    data-animate-order="1"><span class="t-btnflex__text"> Register </span>
-                                    <style>
-                                        #rec1748655323 .t-btnflex.t-btnflex_type_button {
-                                            color: #ffffff;
-                                            background-image: linear-gradient(0.125turn, rgba(32, 228, 164, 1) 0%, rgba(44, 201, 204, 1) 100%);
-                                            transform: translateZ(0);
-                                            border-style: solid !important;
-                                            border-color: #ffffff4d !important;
-                                            --border-width: 1px;
-                                            border-radius: 64px;
-                                            box-shadow: 10px -10px 20px -2px rgba(32, 228, 164, 0.5) !important;
-                                            transition-duration: 0.2s;
-                                            transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
-                                            transition-timing-function: ease-in-out;
-                                            position: relative;
-                                            overflow: hidden;
-                                            z-index: 1;
-                                        }
-                                    </style>
-                                </a> </div>
+            <div id="rec1748655373" class="r t-rec t-rec_pt_75 t-rec_pb_75"
+                style="padding-top:75px;padding-bottom:75px;background-color:#000000; " data-record-type="3"
+                data-bg-color="#000000"> <!-- T107 -->
+                <div class="t107">
+                    <div class="t-align_center" itemscope itemtype="http://schema.org/ImageObject">
+                        <meta itemprop="image" content="images/tild3462-3861-4930-a435-656434326436___-1.png"> <img
+                            class="t-img t-width t107__widthauto"
+                            src="images/tild3462-3861-4930-a435-656434326436__-__empty___-1.png"
+                            data-original="images/tild3462-3861-4930-a435-656434326436___-1.png" imgfield="img" alt="">
+                        <div class="t-container_8">
+                            <div class="t-col t-col_8 t107__title t-text" field="title" itemprop="name">Our partners and
+                                organizers</div>
                         </div>
                     </div>
                 </div>
+                <style>
+                    #rec1748655373 .t107__title {
+                        color: #ffffff;
+                    }
+                </style>
             </div>
-            <style>
-                #rec1748655323 .t588__title {
-                    background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
-                    color: transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    font-weight: 700;
-                }
-
-                #rec1748655323 .t588__title :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
-                #rec1748655323 .t588__title>.ql-formula {
-                    color: #000;
-                }
-
-                #rec1748655323 .t588__descr {
-                    max-width: 700px;
-                    background-image: linear-gradient(0.125turn, rgba(118, 254, 197, 1) 0%, rgba(228, 255, 249, 1) 100%);
-                    color: transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    font-family: 'TildaSans';
-                    font-weight: 800;
-                }
-
-                #rec1748655323 .t588__descr :not(span[style*='color']:not([style*='gradient']))>.ql-formula,
-                #rec1748655323 .t588__descr>.ql-formula {
-                    color: #000;
-                }
-            </style>
-        </div>
-        <div id="rec1748655333" class="r t-rec t-rec_pt_150 t-rec_pb_120"
-            style="padding-top:150px;padding-bottom:120px;background-image:linear-gradient(1turn,rgba(119,104,232,1) 0%,rgba(52,33,106,1) 100%); "
-            data-record-type="43" data-bg-color="linear-gradient(1turn,rgba(119,104,232,1) 0%,rgba(52,33,106,1) 100%)">
-            <!-- T030 -->
-            <div class="t030">
-                <div class="t-container t-align_center">
-                    <div class="t-col t-col_10 t-prefix_1">
-                        <div class="t030__descr t-descr t-descr_md" field="descr"><strong>United Arab Emirates, Abu
-                                Dhabi,</strong><br /><strong>KEZAD Warehouses (KLP-4) Unit
-                                B14-04</strong><br /><a href="#" id="coords" onclick="copyCoords(event)" style="text-decoration: underline; cursor: pointer;">24.722605, 54.749133</a><br /><strong>Future Lab UMEX Exhibition
-                                Stand</strong><br /><strong>07-037</strong></div>
-                    </div>
-                </div>
-            </div>
-            <style>
-                #rec1748655333 .t030__title {
-                    color: #ffffff;
-                }
-
-                @media screen and (min-width:480px) {
-                    #rec1748655333 .t030__title {
-                        font-size: 30px;
-                    }
-                }
-
-                @media screen and (max-width:480px),
-                (orientation:landscape) and (max-height:480px) {
-                    #rec1748655333 .t030__title {
-                        font-size: 26px;
-                    }
-                }
-
-                #rec1748655333 .t030__descr {
-                    color: #ffffff;
-                }
-
-                @media screen and (min-width:900px) {
-                    #rec1748655333 .t030__descr {
-                        font-size: 34px;
-                    }
-                }
-
-                @media screen and (min-width:480px) and (max-width:900px) {
-                    #rec1748655333 .t030__descr {
-                        font-size: 28px;
-                    }
-                }
-
-                @media screen and (max-width:480px),
-                (orientation:landscape) and (max-height:480px) {
-                    #rec1748655333 .t030__descr {
-                        font-size: 28px;
-                    }
-                }
-            </style>
-        </div>
-        <div id="rec1748655343" class="r t-rec t-rec_pt_0 t-rec_pb_0"
-            style="padding-top:0px;padding-bottom:0px;background-image:linear-gradient(0turn,rgba(111,96,217,1) 0%,rgba(119,104,232,1) 100%); "
-            data-record-type="125"
-            data-bg-color="linear-gradient(0turn,rgba(111,96,217,1) 0%,rgba(119,104,232,1) 100%)"> <!-- T117 -->
-            <div class="t117">
-                <div class="t-width t-margin_auto t-width_10">
-                    <div class="t-map-lazyload t117_map" data-maplazy-load="false"
-                        style="background-color:rgb(229, 227, 223);overflow:hidden;transform: translateZ(0)">
-                        <div class="t-map" id="separateMap1748655343" data-map-language="" data-map-x="55.751979"
-                            data-map-y="37.617499" data-map-zoom="16" data-map-title="Moscow" data-map-mode=""
-                            style="width:100%; position: relative; height:385px;"> </div>
-                        <script
-                            type="text/javascript">var arMapMarkers1748655343 = [{ title: "KEZAD Warehouses (KLP-4)", descr: "", lat: "24.722605", lng: "54.749133", color: "#872dff", url: null, isOpen: false, isHidden: false, offset: null, },]; t_onReady(function () { t_map_lazyload_add_map(); window.addEventListener('scroll', t_throttle(t_map_lazyload_add_map, 300)); function t_map_lazyload_add_map() { var windowHeight = window.innerHeight; var scrollDiffHeigth = 700; var rec = document.getElementById('rec' + 1748655343); if (!rec) return; var map = rec.querySelector('.t-map-lazyload'); if (!map) return; var blockTop = map.getBoundingClientRect().top + window.pageYOffset; if (window.pageYOffset > blockTop - windowHeight - scrollDiffHeigth) { if (map.getAttribute('data-maplazy-load') === 'false') { map.setAttribute('data-maplazy-load', 'true'); t_onFuncLoad('t_appendYandexMap', function () { t_appendYandexMap("1748655343", ""); }); } } } });</script>
-                    </div>
-                </div>
+            <div id="rec1748655383" class="r t-rec t-rec_pt_90 t-rec_pb_90"
+                style="padding-top:90px;padding-bottom:90px; " data-record-type="191"> <!-- T142 -->
+                <div class="t142"> <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"><span
+                            class="t-btnflex__text">Register</span>
+                        <style>
+                            #rec1748655383 .t-btnflex.t-btnflex_type_button {
+                                color: #ffffff;
+                                background-image: linear-gradient(0.125turn, rgba(206, 159, 252, 1) 0%, rgba(115, 103, 240, 1) 100%);
+                                transform: translateZ(0);
+                                border-style: solid !important;
+                                border-color: #ffffff4d !important;
+                                --border-width: 1px;
+                                border-radius: 64px;
+                                box-shadow: 10px -10px 20px -2px rgba(206, 159, 252, 0.5) !important;
+                                transition-duration: 0.2s;
+                                transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
+                                transition-timing-function: ease-in-out;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                            }
+                        </style>
+                    </a> </div>
             </div>
         </div>
-        <div id="rec1748655353" class="r t-rec" style=" " data-record-type="215"> <a name="contacts"
-                style="font-size:0;"></a> </div>
-        <div id="rec1748655363" class="r t-rec t-rec_pt_150 t-rec_pb_150"
-            style="padding-top:150px;padding-bottom:150px;background-color:#6f60d9; " data-record-type="551"
-            data-bg-color="#6f60d9"> <!-- t551-->
-            <div class="t551">
-                <div class="t-container">
-                    <div class="t-col t-col_6 t-prefix_3 t-align_center">
-                        <div class="t551__title t-name t-name_xs" field="title" data-animate-order="1">Contacts</div>
-                        <div class="t551__contacts t-title t-title_xxs" field="text" data-animate-order="2"
-                            data-animate-delay="0.3">+971 50 904 9893</div>
-                        <div class="t551__address t-text t-text_sm" field="text2" data-animate-order="3"
-                            data-animate-delay="0.3">Website: futurelab-uae.com<br />Email: future.lab.ind.uae@gmail.com
-                        </div>
-                        <div class="t-sociallinks">
-                            <ul role="list" class="t-sociallinks__wrapper" aria-label="Social media links">
-                                <!-- new soclinks -->
-                                <li class="t-sociallinks__item t-sociallinks__item_website"><a href="https://futurelab-uae.com"
-                                        target="_blank" rel="nofollow" aria-label="website"
-                                        style="width: 30px; height: 30px;"><svg class="t-sociallinks__svg"
-                                            role="presentation" width=30px height=30px viewBox="0 0 100 100" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM43.1192 25.9588C42.7309 26.4078 42.3383 26.8888 41.946 27.4032C39.4191 30.7167 36.9293 35.3813 35.6505 41.6978H26.4111C29.0843 34.1017 35.3234 28.1857 43.1192 25.9588ZM25 49.9979C25 48.2235 25.1849 46.4923 25.5364 44.8225H35.1389C34.8984 46.7237 34.7656 48.7559 34.7656 50.9255C34.7656 52.3779 34.8252 53.7602 34.9368 55.0756H25.5161C25.1777 53.436 25 51.7377 25 49.9979ZM42.3083 73.7903C34.8591 71.3843 28.9386 65.5776 26.3769 58.2003H35.3161C36.4534 65.3227 39.1925 70.1988 42.0073 73.4492C42.1077 73.565 42.208 73.6787 42.3083 73.7903ZM48.35 74.9422L48.4375 74.9477V58.2003H38.4839C39.5758 64.4887 42.0087 68.6774 44.3697 71.4036C45.8002 73.0554 47.2242 74.1932 48.35 74.9422ZM73.6231 58.2003C71.0614 65.5776 65.1409 71.3843 57.6917 73.7903C57.792 73.6787 57.8923 73.565 57.9927 73.4492C60.8075 70.1988 63.5466 65.3227 64.6839 58.2003H73.6231ZM75 49.9979C75 51.7377 74.8223 53.436 74.4839 55.0756H65.0632C65.1748 53.7602 65.2344 52.3779 65.2344 50.9255C65.2344 48.7559 65.1016 46.7237 64.8611 44.8225H74.4636C74.8151 46.4923 75 48.2235 75 49.9979ZM56.8808 25.9588C64.6766 28.1857 70.9157 34.1017 73.5889 41.6978H64.3495C63.0707 35.3813 60.5809 30.7167 58.054 27.4032C57.6617 26.8888 57.2691 26.4078 56.8808 25.9588ZM51.65 74.9422C52.7758 74.1932 54.1998 73.0554 55.6303 71.4036C57.9913 68.6774 60.4242 64.4887 61.5161 58.2003H51.5625V74.9477L51.65 74.9422ZM48.4375 55.0756H38.0738C37.9548 53.7708 37.8906 52.3889 37.8906 50.9255C37.8906 48.7369 38.0342 46.7056 38.2907 44.8225H48.4375V55.0756ZM61.9262 55.0756H51.5625V44.8225H61.7093C61.9658 46.7056 62.1094 48.7369 62.1094 50.9255C62.1094 52.3889 62.0452 53.7708 61.9262 55.0756ZM44.431 29.2979C45.8667 27.4153 47.2975 26.042 48.4375 25.1006V41.6978H38.8444C40.0593 36.1765 42.2624 32.1415 44.431 29.2979ZM61.1556 41.6978C59.9407 36.1765 57.7376 32.1415 55.569 29.2979C54.1333 27.4153 52.7026 26.042 51.5625 25.1006V41.6978H61.1556Z"
-                                                fill="#ffffff" />
-                                        </svg></a></li>&nbsp;<li class="t-sociallinks__item t-sociallinks__item_email">
-                                    <a href="mailto:future.lab.ind.uae@gmail.com" target="_blank" rel="nofollow"
-                                        aria-label="Электронная почта" style="width: 30px; height: 30px;"><svg
-                                            class="t-sociallinks__svg" role="presentation" width=30px height=30px
-                                            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM51.8276 49.2076L74.191 33.6901C73.4347 32.6649 72.2183 32 70.8466 32H29.1534C27.8336 32 26.6576 32.6156 25.8968 33.5752L47.5881 49.172C48.8512 50.0802 50.5494 50.0945 51.8276 49.2076ZM75 63.6709V37.6286L53.4668 52.57C51.1883 54.151 48.1611 54.1256 45.9095 52.5066L25 37.4719V63.6709C25 65.9648 26.8595 67.8243 29.1534 67.8243H70.8466C73.1405 67.8243 75 65.9648 75 63.6709Z"
-                                                fill="#ffffff" />
-                                        </svg></a></li>&nbsp;<li class="t-sociallinks__item t-sociallinks__item_phone">
-                                    <a href="tel:+971 50 904 9893" target="_self" rel="nofollow" aria-label="Телефон"
-                                        style="width: 30px; height: 30px;"><svg class="t-sociallinks__svg"
-                                            role="presentation" width=30px height=30px viewBox="0 0 100 100" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM50.0089 29H51.618C56.4915 29.0061 61.1633 30.9461 64.6073 34.3938C68.0512 37.8415 69.9856 42.5151 69.9856 47.3879V48.9968C69.9338 49.5699 69.6689 50.1027 69.2433 50.49C68.8177 50.8772 68.2623 51.0908 67.6868 51.0884H67.5029C66.8966 51.0358 66.3359 50.745 65.9437 50.2796C65.5516 49.8143 65.36 49.2124 65.4109 48.6061V47.3879C65.4109 43.7303 63.9578 40.2225 61.3711 37.6362C58.7844 35.0499 55.2761 33.597 51.618 33.597H50.3997C49.79 33.6488 49.1847 33.4563 48.7169 33.0619C48.2492 32.6675 47.9573 32.1035 47.9054 31.4939C47.8536 30.8843 48.0461 30.279 48.4406 29.8114C48.835 29.3437 49.3992 29.0518 50.0089 29ZM56.889 49.0132C56.4579 48.5821 56.2157 47.9975 56.2157 47.3879C56.2157 46.1687 55.7313 44.9994 54.869 44.1373C54.0068 43.2752 52.8374 42.7909 51.618 42.7909C51.0083 42.7909 50.4236 42.5488 49.9925 42.1177C49.5614 41.6867 49.3192 41.102 49.3192 40.4924C49.3192 39.8828 49.5614 39.2982 49.9925 38.8672C50.4236 38.4361 51.0083 38.1939 51.618 38.1939C54.0568 38.1939 56.3956 39.1626 58.1201 40.8868C59.8445 42.611 60.8133 44.9495 60.8133 47.3879C60.8133 47.9975 60.5711 48.5821 60.14 49.0132C59.7089 49.4442 59.1242 49.6864 58.5145 49.6864C57.9048 49.6864 57.3201 49.4442 56.889 49.0132ZM66.4011 69.0663L66.401 69.0846C66.3999 69.5725 66.2967 70.0547 66.0981 70.5003C65.8998 70.9451 65.611 71.3435 65.2499 71.67C64.8674 72.0182 64.4123 72.2771 63.9176 72.428C63.4516 72.5702 62.9613 72.6132 62.4782 72.5546C58.2475 72.53 53.4102 70.5344 49.1802 68.1761C44.8871 65.7827 41.0444 62.915 38.8019 60.9903L38.7681 60.9613L38.7367 60.9299C32.3303 54.5198 28.2175 46.1735 27.0362 37.186C26.9623 36.6765 27.0018 36.157 27.1519 35.6645C27.3027 35.1695 27.5615 34.7142 27.9094 34.3314C28.2397 33.9658 28.6436 33.6742 29.0944 33.4757C29.5447 33.2775 30.0316 33.1766 30.5234 33.1796H37.4967C38.299 33.1636 39.0826 33.4244 39.7156 33.9184C40.3527 34.4156 40.7979 35.1184 40.9754 35.9071L41.0038 36.0335V36.1631C41.0038 36.4901 41.0787 36.795 41.1847 37.2268C41.2275 37.4012 41.2755 37.5965 41.3256 37.8221L41.326 37.8238C41.583 38.9896 41.925 40.1351 42.3491 41.251L42.7322 42.259L38.4899 44.26L38.4846 44.2625C38.204 44.3914 37.986 44.6263 37.8784 44.9157L37.8716 44.934L37.8642 44.952C37.7476 45.236 37.7476 45.5545 37.8642 45.8385L37.9144 45.9608L37.9359 46.0912C38.0802 46.9648 38.5603 48.0981 39.4062 49.4169C40.243 50.7215 41.3964 52.1437 42.808 53.5872C45.6206 56.4634 49.3981 59.3625 53.5798 61.5387C53.8533 61.6395 54.1552 61.6343 54.4257 61.5231L54.4437 61.5157L54.462 61.5089C54.7501 61.4016 54.9842 61.1848 55.1133 60.9057L55.1148 60.9023L57.0232 56.6591L58.0397 57.03C59.1934 57.4509 60.3737 57.7947 61.5729 58.0592L61.5785 58.0605L61.5841 58.0618C62.152 58.1929 62.7727 58.3042 63.3802 58.3942L63.4231 58.4006L63.4654 58.4101C64.2537 58.5877 64.956 59.0332 65.453 59.6706C65.9429 60.2991 66.2033 61.0758 66.1916 61.8721L66.4011 69.0663Z"
-                                                fill="#ffffff" />
-                                        </svg></a></li><!-- /new soclinks -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <style>
-                #rec1748655363 .t551__title {
-                    font-size: 22px;
-                    color: #ffffff;
-                }
-
-                @media screen and (max-width:480px),
-                (orientation:landscape) and (max-height:480px) {
-                    #rec1748655363 .t551__title {
-                        font-size: 20px;
-                    }
-                }
-
-                #rec1748655363 .t551__contacts {
-                    color: #ffffff;
-                }
-
-                #rec1748655363 .t551__address {
-                    color: #ffffff;
-                }
-            </style>
-        </div>
-        <div id="rec1748655373" class="r t-rec t-rec_pt_75 t-rec_pb_75"
-            style="padding-top:75px;padding-bottom:75px;background-color:#000000; " data-record-type="3"
-            data-bg-color="#000000"> <!-- T107 -->
-            <div class="t107">
-                <div class="t-align_center" itemscope itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="image" content="images/tild3462-3861-4930-a435-656434326436___-1.png"> <img
-                        class="t-img t-width t107__widthauto"
-                        src="images/tild3462-3861-4930-a435-656434326436__-__empty___-1.png"
-                        data-original="images/tild3462-3861-4930-a435-656434326436___-1.png" imgfield="img" alt="">
-                    <div class="t-container_8">
-                        <div class="t-col t-col_8 t107__title t-text" field="title" itemprop="name">Our partners and
-                            organizers</div>
-                    </div>
-                </div>
-            </div>
-            <style>
-                #rec1748655373 .t107__title {
-                    color: #ffffff;
-                }
-            </style>
-        </div>
-        <div id="rec1748655383" class="r t-rec t-rec_pt_90 t-rec_pb_90" style="padding-top:90px;padding-bottom:90px; "
-            data-record-type="191"> <!-- T142 -->
-            <div class="t142"> <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSd0DiZa4ejNN0dp6ruJD-ioFU6hlpcvUyUsdgAERrdk6nem0w/viewform?usp=dialog"><span
-                        class="t-btnflex__text">Register</span>
-                    <style>
-                        #rec1748655383 .t-btnflex.t-btnflex_type_button {
-                            color: #ffffff;
-                            background-image: linear-gradient(0.125turn, rgba(206, 159, 252, 1) 0%, rgba(115, 103, 240, 1) 100%);
-                            transform: translateZ(0);
-                            border-style: solid !important;
-                            border-color: #ffffff4d !important;
-                            --border-width: 1px;
-                            border-radius: 64px;
-                            box-shadow: 10px -10px 20px -2px rgba(206, 159, 252, 0.5) !important;
-                            transition-duration: 0.2s;
-                            transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
-                            transition-timing-function: ease-in-out;
-                            position: relative;
-                            overflow: hidden;
-                            z-index: 1;
-                        }
-                    </style>
-                </a> </div>
-        </div>
-    </div>
-    <script>
-        function copyCoords(event) {
-            event.preventDefault();
-            var coordsText = '24.722605, 54.749133';
-            navigator.clipboard.writeText(coordsText).then(function() {
-                var el = document.getElementById('coords');
-                var originalText = el.innerText;
-                el.innerText = 'Copied!';
-                setTimeout(function(){
-                    el.innerText = originalText;
-                }, 2000);
-            }, function(err) {
-                console.error('Could not copy text: ', err);
-            });
-        }
-
-        // Функции для управления модальным окном PDF
-        document.addEventListener('DOMContentLoaded', function() {
-            // Получаем элементы
-            const modal = document.getElementById('pdfModal');
-            const btn = document.getElementById('documents-btn');
-            const closeBtn = document.querySelector('.close-modal');
-            
-            // Открытие модального окна
-            if (btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+        <script>
+            function copyCoords(event) {
+                event.preventDefault();
+                var coordsText = '24.722605, 54.749133';
+                navigator.clipboard.writeText(coordsText).then(function () {
+                    var el = document.getElementById('coords');
+                    var originalText = el.innerText;
+                    el.innerText = 'Copied!';
+                    setTimeout(function () {
+                        el.innerText = originalText;
+                    }, 2000);
+                }, function (err) {
+                    console.error('Could not copy text: ', err);
                 });
             }
-            
-            // Закрытие модального окна
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку
+
+            // Функции для управления модальным окном PDF
+            document.addEventListener('DOMContentLoaded', function () {
+                // Получаем элементы
+                const modal = document.getElementById('pdfModal');
+                const btn = document.getElementById('documents-btn');
+                const closeBtn = document.querySelector('.close-modal');
+
+                // Открытие модального окна
+                if (btn) {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+                    });
+                }
+
+                // Закрытие модального окна
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function () {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку
+                    });
+                }
+
+                // Закрытие при клике вне модального окна
+                window.addEventListener('click', function (e) {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
                 });
-            }
-            
-            // Закрытие при клике вне модального окна
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
+
+                // Закрытие при нажатии Escape
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
             });
-            
-            // Закрытие при нажатии Escape
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
